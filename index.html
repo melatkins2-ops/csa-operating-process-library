@@ -130,6 +130,44 @@ button,.gateway,.category-card,.dept-card,.tool-card,.resource-choice,.process-n
 .steps-builder{border:1px solid #d8dde2;border-radius:10px;overflow:hidden;margin-top:16px}.steps-head{display:flex;justify-content:space-between;align-items:center;padding:12px 14px;background:#faf8f5;color:#173f63}.dynamic-step{display:grid;grid-template-columns:48px 1fr 220px 38px;gap:10px;padding:11px 12px;border-top:1px solid #e4e7e9;align-items:start}.dynamic-step .step-number{font-weight:800;color:#d85f16;padding-top:12px;text-align:center}.dynamic-step input{font-size:14px;min-height:42px;padding:10px}.dynamic-step button{border:0;background:transparent;color:#8a4b34;font-size:18px;padding:8px;cursor:pointer}.sop-only-fields{margin-top:18px}.review-checks{display:grid;gap:8px;margin:18px 0;padding:16px;background:#faf8f5;border-radius:9px}.review-checks label{display:flex;align-items:center;gap:9px}.review-checks input{width:auto!important;min-height:auto!important}
 @media(max-width:760px){.builder-hero{padding:20px;display:block}.builder-hero .btn{margin-top:12px}.builder-principles,.definition-strip,.source-options{grid-template-columns:1fr}.builder-principles>div{border-right:0;border-bottom:1px solid #e4ded6}.process-builder-v2 .builder-progress button span{display:none}.process-builder-v2 .builder-step{padding:20px 16px}.dynamic-step{grid-template-columns:36px 1fr 34px}.dynamic-step .step-role{grid-column:2}.step-head{grid-template-columns:42px 1fr}.step-head>span{width:38px;height:38px}}
 </style>
+
+<style id="v16-design-refresh">
+/* v16: warmer hero + guided builder landing */
+.csa-photo-hero{grid-template-columns:minmax(0,1.35fr) minmax(340px,.95fr);background:#fff9f1;border:1px solid #eadfd2;box-shadow:none}
+.csa-hero-prompt{position:relative;padding:44px 42px;color:#173f63;background:linear-gradient(135deg,#fffaf3 0%,#f7efe3 100%);border-left:5px solid #f58220}
+.csa-hero-prompt:after{content:"";position:absolute;right:26px;bottom:22px;width:86px;height:7px;border-radius:8px;background:#f58220;transform:rotate(-4deg)}
+.csa-hero-prompt h2{color:#173f63;max-width:460px}
+.csa-hero-prompt p{color:#465766;max-width:430px}
+.photo-overlay{background:linear-gradient(0deg,rgba(14,31,48,.64),transparent 55%)}
+.process-builder-v2{border:0;box-shadow:none;overflow:visible}
+.process-builder-v2 .builder-hero{padding:8px 0 18px;border:0}
+.process-builder-v2 .builder-hero h4{font-size:34px!important}
+.builder-principles{display:none}
+.process-builder-v2 .builder-progress{border:1px solid #e2e5e8;border-radius:12px;overflow:hidden;margin-bottom:24px}
+.process-builder-v2 .builder-step{padding:4px 0 30px}
+#builderStep1 .step-head{display:block;margin-bottom:18px}
+#builderStep1 .step-head>span{display:none}
+#builderStep1 .step-head h5{font-size:30px!important}
+.builder-start-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:16px 0 18px}
+.builder-start-card{appearance:none;border:1px solid #dce2e7;border-radius:14px;background:#f7fafc;padding:20px 16px;text-align:center;min-height:190px;cursor:pointer;color:#173f63;font:inherit;transition:border-color .15s,transform .15s,background .15s}
+.builder-start-card:nth-child(even){background:#fff8ef}
+.builder-start-card:hover,.builder-start-card:focus-visible{border-color:#f58220;transform:translateY(-1px);outline:3px solid rgba(245,130,32,.18);outline-offset:2px}
+.builder-start-card.selected{border:2px solid #f58220;background:#fff7ed}
+.builder-start-icon{width:48px;height:48px;border-radius:50%;display:grid;place-items:center;margin:0 auto 13px;background:#173f63;color:#fff;font-size:22px;font-weight:800}
+.builder-start-card:nth-child(even) .builder-start-icon{background:#f58220}
+.builder-start-card b{display:block;font-size:18px;line-height:1.15;margin-bottom:9px}
+.builder-start-card small{display:block;color:#53616d;font-size:13.5px;line-height:1.4}
+.builder-resource-help{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:18px;align-items:center;background:#f3f7fa;border:1px solid #dce5ec;border-radius:14px;padding:16px 18px;margin:0 0 22px}
+.builder-resource-help strong{display:block;color:#173f63;font-size:17px;margin-bottom:3px}.builder-resource-help p{margin:0;color:#53616d;font-size:13.5px}
+.builder-resource-help details{min-width:240px}.builder-resource-help summary{cursor:pointer;font-weight:800;color:#173f63;padding:10px 12px;background:#fff;border:1px solid #d8e0e7;border-radius:9px;list-style:none}.builder-resource-help summary::-webkit-details-marker{display:none}
+.builder-resource-help .defs{grid-column:1/-1;display:grid;grid-template-columns:repeat(3,1fr);gap:10px;padding-top:4px}
+.builder-resource-help .defs article{background:#fff;border:1px solid #dde3e8;border-radius:10px;padding:13px}.builder-resource-help .defs b{font-size:14px}.builder-resource-help .defs span{display:block;font-size:12.5px;line-height:1.4;color:#56636f;margin-top:5px}
+#builderStep1 .builder-clarity{display:none}
+#builderStep1 .prominent-field{display:none}
+#builderStep1 .form-grid{padding-top:4px}
+@media(max-width:900px){.builder-start-grid{grid-template-columns:1fr 1fr}.builder-resource-help{grid-template-columns:1fr}.builder-resource-help .defs{grid-template-columns:1fr}.csa-photo-hero{grid-template-columns:1fr}.csa-hero-prompt{border-left:0;border-top:5px solid #f58220}}
+@media(max-width:560px){.builder-start-grid{grid-template-columns:1fr}.builder-start-card{min-height:0}.process-builder-v2 .builder-hero h4{font-size:28px!important}}
+</style>
 </head>
 <body><a class="skip-link" href="#mainContent">Skip to main content</a>
 <a class="skip-link" href="#mainContent">Skip to main content</a>
@@ -226,14 +264,19 @@ button,.gateway,.category-card,.dept-card,.tool-card,.resource-choice,.process-n
 
   <div id="builderStep1" class="builder-step active">
     <div class="step-head"><span>1</span><div><h5>Where are you starting?</h5><p>Choose the option that best matches what you need. If you are unsure, choose “I’m not sure what I have.”</p></div></div>
-    <div class="builder-clarity" aria-label="Written process, SOP, and job aid definitions">
-      <div class="clarity-intro"><b>Which resource do you need?</b><span>You do not need to know before you start. These definitions show the difference.</span></div>
-      <div class="clarity-grid">
-        <article><span class="clarity-label">WRITTEN PROCESS</span><h6>How does the work move from beginning to end?</h6><p>Shows the starting point, major steps, who is involved, the sequence, and what happens at the end.</p><small><b>Use it when:</b> people primarily need to understand how the work flows.</small></article>
-        <article><span class="clarity-label">SOP</span><h6>How do we consistently carry out this work?</h6><p>Adds the operational detail staff need: responsibilities, detailed steps, changes in the path, documentation, and a clear finish.</p><small><b>Use it when:</b> recurring work needs to be carried out consistently.</small></article>
-        <article><span class="clarity-label">JOB AID / TOOL</span><h6>What can help someone complete the work?</h6><p>A checklist, template, form, decision guide, quick reference, calculator, or similar support.</p><small><b>Use it when:</b> someone needs help completing part of a process or SOP.</small></article>
-      </div>
-      <div class="clarity-relationship"><b>How they work together:</b> A written process can become the foundation for an SOP. An SOP can also be turned into a shorter written-process view. A job aid can support either one.</div>
+    <div class="builder-start-grid" aria-label="Choose how you want to start">
+      <button type="button" class="builder-start-card" data-builder-path="Use an existing written process to build an SOP" onclick="chooseBuilderPath(this)"><span class="builder-start-icon">≡</span><b>Use an existing written process</b><small>Turn what you already have into an SOP or strengthen the process.</small></button>
+      <button type="button" class="builder-start-card" data-builder-path="Turn an SOP into a simpler written process" onclick="chooseBuilderPath(this)"><span class="builder-start-icon">⚙</span><b>Use an existing SOP</b><small>Create a simpler written-process view or improve the SOP.</small></button>
+      <button type="button" class="builder-start-card" data-builder-path="Start from scratch" onclick="chooseBuilderPath(this)"><span class="builder-start-icon">＋</span><b>Start from scratch</b><small>Build a new written process or SOP using guided questions.</small></button>
+      <button type="button" class="builder-start-card" data-builder-path="I’m not sure what I have" onclick="chooseBuilderPath(this)"><span class="builder-start-icon">?</span><b>I’m not sure what I have</b><small>Start with what you know. The Builder will help determine the right format.</small></button>
+    </div>
+    <div class="builder-resource-help">
+      <div><strong>Not sure which resource you need?</strong><p>A written process, SOP, and job aid serve different purposes but can work together.</p></div>
+      <details><summary>See definitions &amp; examples</summary><div class="defs">
+        <article><b>Written Process</b><span>Shows how work moves from beginning to end: the starting point, major steps, who is involved, the sequence, and what happens at the end.</span></article>
+        <article><b>Standard Operating Procedure (SOP)</b><span>Explains how recurring work should be carried out consistently, including responsibilities, detailed steps, changes in the path, documentation, and a clear finish.</span></article>
+        <article><b>Job Aid / Tool</b><span>Helps someone complete part of the work, such as a checklist, template, form, decision guide, quick reference, or calculator.</span></article>
+      </div><div class="clarity-relationship"><b>How they work together:</b> A written process can be the foundation for an SOP. An SOP can also become a shorter written-process view. A job aid can support either one.</div></details>
     </div>
     <div class="form-grid">
       <div class="field full prominent-field"><label>What would you like to do?</label><select id="cBuilderPath" onchange="builderPathChanged()"><option value="">Select one…</option><option>Use an existing written process to build an SOP</option><option>Turn an SOP into a simpler written process</option><option>Improve an existing written process</option><option>Improve an existing SOP</option><option>I’m not sure what I have</option><option>Start from scratch</option></select><div id="builderPathHelp" class="path-help"><b>Not sure?</b> Choose “I’m not sure what I have.” The Builder will help determine the right format from the work and anything you already have.</div></div>
@@ -864,5 +907,17 @@ function removeProcessStep(i){builderStepRows.splice(i,1);renderDynamicSteps();}
 function renderDynamicSteps(){let el=document.getElementById('dynamicSteps');if(!el)return;if(!builderStepRows.length)builderStepRows=[{action:'',role:''},{action:'',role:''},{action:'',role:''}];el.innerHTML=builderStepRows.map((r,i)=>`<div class="dynamic-step"><div class="step-number">${i+1}</div><input aria-label="Step ${i+1}" value="${String(r.action||'').replace(/&/g,'&amp;').replace(/"/g,'&quot;')}" oninput="builderStepRows[${i}].action=this.value" placeholder="What needs to happen?"><input class="step-role" aria-label="Who is responsible for step ${i+1}" value="${String(r.role||'').replace(/&/g,'&amp;').replace(/"/g,'&quot;')}" oninput="builderStepRows[${i}].role=this.value" placeholder="Who is involved / responsible?"><button type="button" aria-label="Remove step ${i+1}" onclick="removeProcessStep(${i})">×</button></div>`).join('');}
 function syncSteps(){let t=document.getElementById('cChange');if(t)t.value=builderStepRows.filter(x=>x.action.trim()).map((x,i)=>`${i+1}. ${x.action.trim()}${x.role.trim()?' — '+x.role.trim():''}`).join('\n');}
 document.addEventListener('DOMContentLoaded',()=>{renderDynamicSteps();let bp=document.getElementById('cBuilderPath');if(bp)builderPathChanged();});
+</script>
+
+<script id="v16-builder-start">
+function chooseBuilderPath(button){
+  var select=document.getElementById('cBuilderPath');
+  if(!select) return;
+  var path=button.getAttribute('data-builder-path')||'';
+  select.value=path;
+  document.querySelectorAll('.builder-start-card').forEach(function(card){card.classList.toggle('selected',card===button);});
+  if(typeof builderPathChanged==='function') builderPathChanged();
+  var title=document.getElementById('cTitle'); if(title) title.focus({preventScroll:true});
+}
 </script>
 </body></html>
