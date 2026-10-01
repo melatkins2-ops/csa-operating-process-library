@@ -252,20 +252,59 @@ button,.gateway,.category-card,.dept-card,.tool-card,.resource-choice,.process-n
 <style id="v67-builder-simplify">
 .builder-auto-note{display:flex;gap:10px 18px;align-items:flex-start;margin:0 0 18px;padding:14px 16px;border:1px solid #e2e5e8;border-left:4px solid #f58220;border-radius:10px;background:#fffaf4}.builder-auto-note b{color:#173f63;white-space:nowrap}.builder-auto-note span{color:#53616d;line-height:1.45}.builder-format-help{margin-top:4px}.builder-format-help details{margin-top:8px}.builder-format-help details p{margin:10px 0 0;color:#53616d;line-height:1.5}.process-builder-v2 .builder-progress button{line-height:1.2}.process-builder-v2 .builder-progress button span{font-size:12px}.source-analysis .analysis-actions button:first-child{display:none}@media(max-width:700px){.builder-auto-note{display:block}.builder-auto-note b{display:block;margin-bottom:5px;white-space:normal}}
 </style>
+
+<style>
+.csa-primary-actions{grid-template-columns:repeat(3,minmax(0,1fr))!important}
+.csa-primary-actions .home-action{min-height:178px}
+.csa-secondary-actions{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:18px 0 4px}
+.csa-secondary-actions .secondary-label{font-size:13px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:#66788a;margin-right:4px}
+@media(max-width:900px){.csa-primary-actions{grid-template-columns:1fr!important}.csa-primary-actions .home-action{min-height:auto}}
+</style>
+
+
+<style>
+.find-support-intro{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:8px 0 24px}
+.find-support-step{background:#fff;border:1px solid #d8e2ea;border-radius:12px;padding:16px;display:grid;grid-template-columns:34px 1fr;column-gap:10px;align-items:center}
+.find-support-step span{width:32px;height:32px;border-radius:50%;background:#eaf2f9;color:#0d4f83;display:grid;place-items:center;font-weight:800;grid-row:1/3}
+.find-support-step b{color:#123f68;font-size:15px}.find-support-step small{color:#647789;margin-top:3px}
+.find-support-step.active{border-top:4px solid #ff7a1a}
+.support-principles{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:22px 0}
+.support-principles div{background:#f7f9fb;border:1px solid #dbe3ea;border-radius:10px;padding:16px}
+.support-principles strong,.support-principles span{display:block}.support-principles strong{color:#123f68;margin-bottom:5px}.support-principles span{font-size:14px;color:#607487;line-height:1.45}
+@media(max-width:850px){.find-support-intro,.support-principles{grid-template-columns:1fr}}
+</style>
+
+<style>.route-caution{font-size:14px;color:#6a7784;background:#f7f8fa;border-left:4px solid #d9782d;padding:12px 14px;margin-top:16px}.support-map-block{margin-top:24px;background:#f7f9fb;border:1px solid #dbe3ea;border-radius:12px;padding:20px}.support-map-block h4{margin-top:0;color:#123f68}.support-map-flow{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-top:14px}.support-map-flow span{background:#fff;border:1px solid #ccd9e3;border-radius:999px;padding:9px 12px;font-weight:700;color:#123f68;font-size:14px}.support-map-flow b{color:#71879a}</style>
 </head>
 <body><a class="skip-link" href="#mainContent">Skip to main content</a>
-<header><div class="topbar"><div class="brand"><img class="brand-logo" src="https://grps-cdn.fxbrt.com/downloads/communications/grpsmychoicelogo.png" alt="Grand Rapids Public Schools — GRPS My Choice logo"><div class="brand-copy"><h1>Community &amp; Student Affairs (CSA)<br>Operating &amp; Resource Library</h1><small>One CSA · Clear processes · Stronger coordination · Better support</small></div></div><button class="mobile-nav-toggle" id="mobileNavToggle" aria-expanded="false" aria-controls="primaryNav" onclick="toggleMobileNav()">Menu</button><div class="nav" id="primaryNav" aria-label="Primary navigation"><button class="active" data-view="home">Home</button><button data-view="findsupport">Find Support</button><button data-view="library">Operating Library</button><button data-view="departments">Departments</button><button data-view="routing">No Wrong Door</button><button data-view="contributor">Builder</button><button class="quick-search-btn" onclick="openGlobalSearch()" aria-label="Search the CSA Operating and Resource Library">Search <span class="keyboard-hint">Ctrl/⌘ K</span></button></div></div></header>
+<header><div class="topbar"><div class="brand"><img class="brand-logo" src="https://grps-cdn.fxbrt.com/downloads/communications/grpsmychoicelogo.png" alt="Grand Rapids Public Schools — GRPS My Choice logo"><div class="brand-copy"><h1>Community &amp; Student Affairs (CSA)<br>Operating &amp; Resource Library</h1><small>One CSA · Clear processes · Stronger coordination · Better support</small></div></div><button class="mobile-nav-toggle" id="mobileNavToggle" aria-expanded="false" aria-controls="primaryNav" onclick="toggleMobileNav()">Menu</button><div class="nav" id="primaryNav" aria-label="Primary navigation"><button class="active" data-view="home">Home</button><button data-view="findsupport">Find Support</button><button data-view="library">Operating Library</button><button data-view="departments">Departments</button><button data-view="routing">How CSA Connects Support</button><button data-view="contributor">Builder</button><button class="quick-search-btn" onclick="openGlobalSearch()" aria-label="Search the CSA Operating and Resource Library">Search <span class="keyboard-hint">Ctrl/⌘ K</span></button></div></div></header>
 <main id="mainContent" tabindex="-1">
 <section id="home" class="view">
 <div class="csa-photo-hero">
   <div class="csa-photo-wrap"><img src="https://grps-cdn.fxbrt.com/downloads/_photogalleries_/grand_rapids_university_prep-090.jpg" alt="Grand Rapids University Preparatory Academy scholars"><div class="photo-overlay"><strong>People. Possibilities.<br>Brighter Futures.</strong></div></div>
-  <div class="csa-hero-prompt"><h2>What do you need<br>to get done today?</h2><p>Find it. Use it. Build it.<br>Get to the right CSA resource quickly.</p></div>
+  <div class="csa-hero-prompt"><h2>What do you need<br>to get done today?</h2><p>Find support. Find resources. Explore CSA.<br>Start with what you need.</p></div>
 </div>
-<div class="home-action-grid">
-  <button class="home-action blue" onclick="showView('findsupport')"><span class="home-action-icon">→</span><span><b>Find Support</b><small>Start with what is happening with a scholar, family, or school. We’ll help you find where to start.</small></span><span class="action-arrow">→</span></button>
-  <button class="home-action neutral" onclick="showView('library')"><span class="home-action-icon">⌕</span><span><b>Find a Process or Resource</b><small>Search by what you need to do. You do not need to know the resource type or department.</small></span><span class="action-arrow">→</span></button>
-  <button class="home-action green" onclick="showView('contributor')"><span class="home-action-icon">✎</span><span><b>Build or Update a Resource</b><small>Use the guided Builder when existing CSA resources do not fully meet the need.</small></span><span class="action-arrow">→</span></button>
-  <button class="home-action neutral" onclick="showView('routing')"><span class="home-action-icon">?</span><span><b>Not Sure Where to Start?</b><small>Describe what you are trying to accomplish. No Wrong Door will help point you toward the right CSA work.</small></span><span class="action-arrow">→</span></button>
+<div class="home-action-grid csa-primary-actions">
+  <button class="home-action blue" onclick="showView('findsupport')">
+    <span class="home-action-icon">→</span>
+    <span><b>Find Support</b><small>Something is happening with a scholar, family, or school. Start with what’s going on and find where to begin.</small></span>
+    <span class="action-arrow">→</span>
+  </button>
+  <button class="home-action neutral" onclick="showView('library')">
+    <span class="home-action-icon">⌕</span>
+    <span><b>Find a Resource</b><small>Search CSA tools, guidance, processes, forms, reports, and other resources by what you need to do.</small></span>
+    <span class="action-arrow">→</span>
+  </button>
+  <button class="home-action neutral" onclick="showView('departments')">
+    <span class="home-action-icon">CSA</span>
+    <span><b>Explore CSA</b><small>Browse departments, programs, roles, and supports across Community & Student Affairs.</small></span>
+    <span class="action-arrow">→</span>
+  </button>
+</div>
+<div class="csa-secondary-actions">
+  <span class="secondary-label">More tools</span>
+  <button class="btn ghost" onclick="showView('builder')">Build or Update a Resource</button>
+  <button class="btn ghost" onclick="showView('nowrongdoor')">How CSA Connects Support</button>
 </div>
 <div class="home-impact-strip"><span>Remove barriers</span><span>Create opportunities</span><span>Build partnerships</span><span>Support brighter futures</span></div>
 </section>
@@ -278,6 +317,11 @@ button,.gateway,.category-card,.dept-card,.tool-card,.resource-choice,.process-n
   </div></div>
 
   <div id="fsStart">
+    <div class="find-support-intro">
+      <div class="find-support-step active"><span>1</span><b>What’s going on?</b><small>Start with the need.</small></div>
+      <div class="find-support-step"><span>2</span><b>Where should I start?</b><small>See the best first connection.</small></div>
+      <div class="find-support-step"><span>3</span><b>What do I do next?</b><small>Connect to support or resources.</small></div>
+    </div>
     <div class="library-guide">
       <h4>Support a scholar or family</h4>
       <p>Choose the situation that best matches what you are seeing.</p>
@@ -287,6 +331,8 @@ button,.gateway,.category-card,.dept-card,.tool-card,.resource-choice,.process-n
         <button class="task-chip" onclick="fsShow('basic')">A scholar or family needs help with basic needs or other resources</button>
         <button class="task-chip" onclick="fsShow('behavior')">A scholar is struggling with behavior or staying engaged at school</button>
         <button class="task-chip" onclick="fsShow('health')">A scholar has a health or medical need at school</button>
+        <button class="task-chip" onclick="fsShow('housing')">A scholar or family is experiencing housing instability</button>
+        <button class="task-chip" onclick="fsShow('extended')">A scholar needs after-school, enrichment, or summer support</button>
         <button class="task-chip" onclick="fsShow('navigate')">A family needs help navigating school or connecting with GRPS</button>
         <button class="task-chip" onclick="fsShow('future')">A scholar needs help planning for college, career or what comes next</button>
         <button class="task-chip" onclick="fsShow('multiple')">There’s more than one concern / I’m not sure</button>
@@ -316,7 +362,13 @@ button,.gateway,.category-card,.dept-card,.tool-card,.resource-choice,.process-n
         <button class="task-chip" onclick="quickTask('monitoring compliance')">Monitoring or compliance</button>
       </div>
     </div>
+    <div class="support-principles">
+      <div><strong>Start with the need</strong><span>You should not need to know CSA’s organizational structure to find help.</span></div>
+      <div><strong>Make the connection</strong><span>When another support is needed, help connect the person rather than simply redirecting them.</span></div>
+      <div><strong>Keep information current</strong><span>Service information stays separate from changing staff assignments and contact lists.</span></div>
+    </div>
   </div>
+
 
   <div id="fsDetail" class="hidden">
     <button class="btn ghost" onclick="fsBack()">← Back to support choices</button>
@@ -351,7 +403,7 @@ button,.gateway,.category-card,.dept-card,.tool-card,.resource-choice,.process-n
 <div id="departmentProcesses" class="section hidden"><button class="back-link" onclick="resetDepartments()">← Back to all departments</button><div class="results-head"><div><h4 id="departmentTitle">Department</h4><p id="departmentLead" class="lead"></p></div></div><div id="departmentDashboard"></div><div id="departmentOwnership"></div><div id="departmentProcessList" class="process-list"></div></div>
 </section>
 <section id="routing" class="view hidden">
-<div class="section-title"><div><h3>No Wrong Door</h3><p class="lead">Start with what you are trying to accomplish. You do not need to know the department or resource name.</p></div></div>
+<div class="section-title"><div><h3>How CSA Connects Support</h3><p class="lead">Start with what you are trying to accomplish. You do not need to know the department or resource name.</p></div></div>
 <div class="nwd-shell">
  <div class="nwd-intro"><span class="nwd-kicker">START WITH THE NEED</span><h4>What are you trying to accomplish?</h4><p>Choose the closest option. The result points you first to an available CSA resource when one exists.</p>
  <div class="nwd-choice-grid">
@@ -1868,11 +1920,13 @@ const fsContent = {
  <button class="task-chip" onclick="fsAttendanceResult('basic')">Basic needs</button>
  <button class="task-chip" onclick="fsAttendanceResult('family')">Family circumstances</button>
  <button class="task-chip" onclick="fsAttendanceResult('unknown')">We’re not sure yet</button></div>`,
- mental: `<p class="eyebrow">MENTAL HEALTH & WELL-BEING</p><h3>Start with the concern, not the department.</h3><p class="lead">This pathway will connect to current Behavioral Health, Counseling, and school-based supports. Crisis and immediate-safety language should use current GRPS procedures before publication.</p><button class="btn" onclick="showView('departments')">Browse current CSA supports</button>`,
- basic: `<p class="eyebrow">BASIC NEEDS & FAMILY SUPPORT</p><h3>A scholar or family needs help with basic needs or other resources.</h3><p class="lead">A Family Support Specialist is often a useful starting point. KSSN and other supports may also be involved depending on the need and school.</p><button class="btn" onclick="quickTask('family support resources basic needs')">Find current resources</button>`,
- behavior: `<p class="eyebrow">BEHAVIOR & ENGAGEMENT</p><h3>A scholar is struggling with behavior or staying engaged at school.</h3><p class="lead">Use the need to identify the right combination of behavioral, counseling, SEL, MTSS, and school-team supports.</p><button class="btn" onclick="quickTask('behavior PBIS MTSS SEL')">Find current resources</button>`,
+ mental: `<p class="eyebrow">MENTAL HEALTH & EMOTIONAL WELL-BEING</p><h3>I’m concerned about a scholar’s mental health or emotional well-being.</h3><p class="lead">Start with what you are noticing. You do not need to decide whether Counseling or Behavioral Health is the “right department” before asking for help.</p><div class="task-chips"><button class="task-chip" onclick="fsMentalResult('school')">The scholar needs support coping, connecting, or managing a school-related concern</button><button class="task-chip" onclick="fsMentalResult('ongoing')">The concern feels more significant or ongoing</button><button class="task-chip" onclick="fsMentalResult('unclear')">I’m not sure what level of support is needed</button><button class="task-chip" onclick="fsMentalResult('safety')">There may be an immediate safety concern</button></div><p class="route-caution">Immediate-safety routing must use current GRPS procedures and contacts before this pathway is published.</p>`,
+ basic: `<p class="eyebrow">FAMILY & BASIC NEEDS</p><h3>A scholar or family needs help with basic needs or other resources.</h3><p class="lead">Start with the need. The family should not have to know whether FSS, KSSN, or another CSA support handles it.</p><div class="task-chips"><button class="task-chip" onclick="fsFamilyResult('basic')">Food, clothing, or another basic need</button><button class="task-chip" onclick="fsFamilyResult('housing')">Housing instability</button><button class="task-chip" onclick="fsFamilyResult('navigation')">Help finding or navigating community resources</button><button class="task-chip" onclick="fsFamilyResult('school')">Help communicating with or navigating school</button><button class="task-chip" onclick="fsFamilyResult('multiple')">Several family needs are happening at once</button></div>`,
+ behavior: `<p class="eyebrow">BEHAVIOR & ENGAGEMENT</p><h3>A scholar is struggling with behavior or staying engaged at school.</h3><p class="lead">Start with what is happening and whether the concern is primarily individual, relational, or schoolwide.</p><div class="task-chips"><button class="task-chip" onclick="fsBehaviorResult('individual')">An individual scholar needs behavior or engagement support</button><button class="task-chip" onclick="fsBehaviorResult('relationship')">Relationships, conflict, or connection to school are part of the concern</button><button class="task-chip" onclick="fsBehaviorResult('mental')">Mental health or emotional well-being may be contributing</button><button class="task-chip" onclick="fsBehaviorResult('schoolwide')">The school needs stronger Tier I behavior, PBIS, or SEL support</button><button class="task-chip" onclick="fsBehaviorResult('unclear')">We are not sure what is driving the behavior</button></div>`,
  health: `<p class="eyebrow">HEALTH</p><h3>A scholar has a health or medical need at school.</h3><p class="lead">Start with current School Health Services guidance and the school-based health support available to the scholar.</p><button class="btn" onclick="quickTask('health nurse medical')">Find health resources</button>`,
  navigate: `<p class="eyebrow">NAVIGATING GRPS</p><h3>A family needs help navigating school or connecting with GRPS.</h3><p class="lead">The right starting point may include Community & Student Services, Family & Community Engagement, FSS, or KSSN depending on the question.</p><button class="btn" onclick="showView('departments')">Browse supports</button>`,
+ housing: `<p class="eyebrow">HOUSING INSTABILITY</p><h3>A scholar or family is experiencing housing instability.</h3><p class="lead">Start by identifying whether McKinney-Vento support may apply and what immediate school-access or family needs are present.</p><div class="nwd-standard"><strong>Where to start</strong><p>Use current GRPS McKinney-Vento guidance and connect the family with the appropriate school or district support. FSS or KSSN may also be involved depending on the need.</p></div><button class="btn" onclick="quickTask('McKinney-Vento housing homeless')">Find current guidance</button>`,
+ extended: `<p class="eyebrow">LEARNING BEYOND THE SCHOOL DAY</p><h3>A scholar needs after-school, enrichment, or summer support.</h3><p class="lead">Use current Extended Learning and Summer School resources to identify available programming and next steps.</p><div class="task-chips"><button class="task-chip" onclick="quickTask('extended learning after school')">Extended Learning</button><button class="task-chip" onclick="quickTask('summer school summer learning')">Summer School</button></div>`,
  future: `<p class="eyebrow">COLLEGE, CAREER & WHAT COMES NEXT</p><h3>A scholar needs help planning for the future.</h3><p class="lead">Counseling and Career to College supports can help with academic and postsecondary planning.</p><button class="btn" onclick="quickTask('college career counseling')">Find current resources</button>`,
  multiple: `<p class="eyebrow">LOOK AT THE WHOLE PICTURE</p><h3>There’s more than one concern.</h3><p class="lead">That’s common. Start with the most immediate barrier, identify the best first connection, and bring in other supports without making the scholar or family navigate CSA alone.</p>
  <div class="route-summary"><div><strong>1 · Start here</strong><p>Identify the most useful first connection.</p></div><div><strong>2 · Also involve</strong><p>Add other supports whose expertise is needed.</p></div><div><strong>3 · Bring the right team together</strong><p>Coordinate the work and close the loop.</p></div></div>`,
@@ -1905,6 +1959,19 @@ function fsAttendanceResult(kind){
  <div class="nwd-standard"><strong>You may also need</strong><p>${extras[kind]||extras.unknown}</p></div>
  <div class="nwd-standard"><strong>CSA connection principle</strong><p>When another support is needed, help make the connection whenever possible rather than sending the family from person to person.</p></div>
  <button class="btn" onclick="quickTask('family support attendance FSS')">Find FSS resources</button>`;
+}
+
+function fsMentalResult(kind){
+ const m={school:["Counseling may be a useful starting point","Counselors can support academic, social-emotional, coping, relationship, and school-success needs. Behavioral Health may also be involved when more specialized support is needed."],ongoing:["Connect to the appropriate school-based mental health support","A more significant or ongoing concern may require coordination between Counseling, Behavioral Health, the school team, and other supports. The user should not have to diagnose the level of care."],unclear:["Start with a trusted school-based support","When the level of need is unclear, begin with an appropriate counselor or school support and coordinate from there."],safety:["Use current GRPS immediate-safety procedures","This prototype intentionally does not publish crisis instructions until current GRPS procedures and contacts are verified."]};
+ const x=m[kind]||m.unclear; document.getElementById('fsDetailContent').innerHTML=`<p class="eyebrow">WHERE TO START</p><h3>${x[0]}</h3><p class="lead">${x[1]}</p><div class="nwd-standard"><strong>Connection principle</strong><p>The person asking for help should not have to choose between Counseling and Behavioral Health before support begins.</p></div><button class="btn" onclick="quickTask('counseling behavioral health mental health')">Find current mental health resources</button>`;
+}
+function fsFamilyResult(kind){
+ const m={basic:["Family Support Specialist (FSS)","An FSS is often a useful starting point when basic needs or family circumstances are affecting attendance, engagement, or school success.","KSSN or community resources may also be involved."],housing:["McKinney-Vento support + family support","Housing instability may affect educational rights, access, transportation, and other supports. Use current McKinney-Vento guidance.","FSS and KSSN may also help address related family needs."],navigation:["FSS or KSSN","Both may help families navigate resources. The right starting point depends on the school, need, and role each support is playing.","Coordinate rather than asking the family to determine which role owns the issue."],school:["Family & Community Engagement / family support","Start with the specific school-navigation or communication need and connect the appropriate support.","FSS, KSSN, or Community & Student Services may also be relevant."],multiple:["Start with the most immediate family barrier","Identify one useful first connection, then bring in other supports without making the family start over.","Use a coordinated plan when multiple supports are involved."]};
+ const x=m[kind]||m.multiple; document.getElementById('fsDetailContent').innerHTML=`<p class="eyebrow">WHERE TO START</p><h3>${x[0]}</h3><p class="lead">${x[1]}</p><div class="nwd-standard"><strong>You may also need</strong><p>${x[2]}</p></div><div class="nwd-standard"><strong>Connection principle</strong><p>Help make the next connection whenever possible instead of asking the family to restart.</p></div><button class="btn" onclick="quickTask('family support KSSN FSS resources')">Find current family support resources</button>`;
+}
+function fsBehaviorResult(kind){
+ const m={individual:["Start with the school’s behavior/support process","An individual concern may involve behavioral support, Youth Advocates, Counseling, or the school support team depending on what is happening."],relationship:["Start with connection and relationship supports","Youth Advocate, Counseling, restorative/behavioral supports, or other school-based supports may be appropriate."],mental:["Consider Counseling / Behavioral Health alongside behavior support","Behavior can be a signal of another need. Avoid treating the behavior pathway as separate when mental health or emotional well-being may be contributing."],schoolwide:["Use Tier I PBIS / SEL / MTSS supports","A schoolwide pattern should route to systems-level support rather than treating every concern as an individual referral."],unclear:["Understand what is driving the behavior first","Start with the school team and available support staff to identify patterns, context, and barriers before deciding on the intervention."]};
+ const x=m[kind]||m.unclear; document.getElementById('fsDetailContent').innerHTML=`<p class="eyebrow">WHERE TO START</p><h3>${x[0]}</h3><p class="lead">${x[1]}</p><div class="nwd-standard"><strong>Keep the supports connected</strong><p>Behavior, attendance, mental health, relationships, and family barriers may overlap. Bring in the right supports without creating separate disconnected plans.</p></div><button class="btn" onclick="quickTask('behavior PBIS SEL MTSS youth advocate counseling')">Find current behavior and engagement resources</button>`;
 }
 </script>
 
