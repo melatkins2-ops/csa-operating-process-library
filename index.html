@@ -842,6 +842,30 @@ header button:empty,nav button:empty{display:none!important}
 }
 </style>
 
+
+<style>
+/* Department directory — intentionally not cards */
+.dept-directory{max-width:1080px;margin:0 auto;padding:34px 26px 70px;color:#314850}
+.dept-intro{max-width:760px;margin:24px 0 34px}
+.dept-intro>p,.dept-panel-top>p{font-size:10px;font-weight:950;letter-spacing:.16em;color:#a85538;margin:0 0 8px}
+.dept-intro h1{font-size:40px;letter-spacing:-.035em;color:#2d4650;margin:0 0 10px}
+.dept-intro>span{font-size:15px;line-height:1.5;color:#687878}
+.dept-index{border-top:1px solid #d9d1c8}
+.dept-index button{width:100%;display:grid;grid-template-columns:1fr auto;align-items:center;text-align:left;border:0;border-bottom:1px solid #d9d1c8;background:transparent;padding:19px 6px;cursor:pointer}
+.dept-index button:hover{background:#faf4ec;padding-left:14px}
+.dept-index span{font-size:19px;font-weight:850;color:#334c55}.dept-index b{font-size:18px;color:#a85538}
+.dept-hub-panel{scroll-margin-top:20px}
+.dept-panel-top{background:#f2e5d6;border-radius:24px;padding:30px 34px;margin-bottom:20px}
+.dept-panel-top>button{border:0;background:transparent;color:#7c6557;font-size:12px;font-weight:850;padding:0;margin:0 0 24px;cursor:pointer}
+.dept-panel-top h2{font-size:36px;letter-spacing:-.03em;color:#2e4851;margin:0 0 8px}.dept-panel-top>span{display:block;max-width:760px;color:#647574;line-height:1.5}
+.dept-work-tags{display:flex;gap:8px;flex-wrap:wrap;margin:18px 0 34px}.dept-work-tags span{background:#e7ead8;border-radius:999px;padding:8px 11px;font-size:12px;font-weight:800;color:#53635b}
+.dept-resource-list{max-width:860px}.dept-resource-list h3{font-size:21px;color:#314b54;margin:0 0 8px}
+.dept-resource-list a,.dept-resource-list>button{width:100%;box-sizing:border-box;display:grid;grid-template-columns:1fr auto;align-items:center;text-align:left;text-decoration:none;border:0;border-bottom:1px solid #ddd4cb;background:transparent;padding:17px 5px;cursor:pointer}
+.dept-resource-list a:first-of-type,.dept-resource-list>button:first-of-type{border-top:1px solid #ddd4cb}
+.dept-resource-list strong,.dept-resource-list small{display:block}.dept-resource-list strong{font-size:15px;color:#334d55}.dept-resource-list small{font-size:12px;color:#71807f;margin-top:3px}.dept-resource-list b{font-size:12px;color:#a85538}
+@media(max-width:620px){.dept-intro h1{font-size:33px}.dept-panel-top{padding:25px 22px}.dept-panel-top h2{font-size:30px}}
+</style>
+
 </head>
 <body><a class="skip-link" href="#mainContent">Skip to main content</a>
 <header><div class="topbar"><div class="brand"><img class="brand-logo" src="https://grps-cdn.fxbrt.com/downloads/communications/grpsmychoicelogo.png" alt="Grand Rapids Public Schools — GRPS My Choice logo"><div class="brand-copy"><h1>Community &amp; Student Affairs (CSA)<br>Operating &amp; Resource Library</h1><small>One CSA · Clear processes · Stronger coordination · Better support</small></div></div><button class="mobile-nav-toggle" id="mobileNavToggle" aria-expanded="false" aria-controls="primaryNav" onclick="toggleMobileNav()">Menu</button><div class="nav" id="primaryNav" aria-label="Primary navigation"><button class="active" data-view="home">Home</button><button data-view="findsupport">Our Work</button><button data-view="library">Resources</button><button data-view="departments">Departments</button><button data-view="routing"></button><button data-view="contributor">Builder</button><button class="quick-search-btn" onclick="openGlobalSearch()" aria-label="Search the CSA Operating and Resource Library">Search <span class="keyboard-hint">Ctrl/⌘ K</span></button></div></div></header>
@@ -1368,10 +1392,32 @@ header button:empty,nav button:empty{display:none!important}
 </div>
 <div id="toolWorkspace" class="hidden" style="margin-top:18px"></div>
 </section>
+
 <section id="departments" class="view hidden">
-<div class="section-title"><div><h3>CSA Departments</h3><p class="lead">Each department hub shows verified areas of responsibility, available resources, and work that has been identified but still needs development. If you are not sure where to start, use the Resources or No Wrong Door.</p></div></div>
-<div id="departmentGrid" class="dept-grid"></div>
-<div id="departmentProcesses" class="section hidden"><button class="back-link" onclick="resetDepartments()">← Back to all departments</button><div class="results-head"><div><h4 id="departmentTitle">Department</h4><p id="departmentLead" class="lead"></p></div></div><div id="departmentDashboard"></div><div id="departmentOwnership"></div><div id="departmentProcessList" class="process-list"></div></div>
+  <div class="dept-directory">
+    <div class="path-context"><button onclick="showView('home')">CSA Home</button><span>›</span><strong>Departments</strong></div>
+
+    <header class="dept-intro">
+      <p>CSA DEPARTMENTS</p>
+      <h1>Go directly to your team's work.</h1>
+      <span>Choose a department to see its current resources, processes, tools, and connected work. No counts. No inventory language.</span>
+    </header>
+
+    <div class="dept-index">
+      <button onclick="openDeptHub('assessment')"><span>Assessment &amp; Evaluation</span><b>→</b></button>
+      <button onclick="openDeptHub('behavioral')"><span>Behavioral Health</span><b>→</b></button>
+      <button onclick="openDeptHub('counseling')"><span>Counseling</span><b>→</b></button>
+      <button onclick="openDeptHub('css')"><span>Community &amp; Student Services</span><b>→</b></button>
+      <button onclick="openDeptHub('extended')"><span>Extended Learning</span><b>→</b></button>
+      <button onclick="openDeptHub('sel')"><span>Social Emotional Learning</span><b>→</b></button>
+      <button onclick="openDeptHub('federal')"><span>State &amp; Federal Programs</span><b>→</b></button>
+      <button onclick="openDeptHub('summer')"><span>Summer School</span><b>→</b></button>
+      <button onclick="openDeptHub('face')"><span>Family &amp; Community Engagement</span><b>→</b></button>
+      <button onclick="openDeptHub('health')"><span>School Health Services</span><b>→</b></button>
+    </div>
+
+    <section id="deptHubPanel" class="dept-hub-panel hidden"></section>
+  </div>
 </section>
 <section id="routing" class="view hidden">
 <div class="section-title"><div><h3></h3><p class="lead">Start with what you are trying to accomplish. You do not need to know the department or resource name.</p></div></div>
@@ -3275,6 +3321,71 @@ window.filterVerifiedResources=function(tag,btn){
  const toggle=document.getElementById('catalogToggle');
  if(toggle) toggle.textContent=(cat&&cat.classList.contains('show-all'))?'Show fewer resources ↑':'Show all verified resources ↓';
 };
+</script>
+
+
+<script>
+const CSA_DEPT_HUBS={
+ assessment:{name:"Assessment & Evaluation",purpose:"Assessment, data access, evaluation, and evidence to support district and school decision-making.",work:["Assessment & accountability","Data access & use","Program evaluation","Research / data requests"],resources:[
+  ["GRPS CNA","Comprehensive needs assessment resource","https://melatkins2-ops.github.io/grps-cna/"],
+  ["Find related resources","Search assessment and evaluation resources","search:assessment evaluation data"]
+ ]},
+ behavioral:{name:"Behavioral Health",purpose:"Mental-health and behavioral supports that strengthen scholar well-being and coordinated school-based services.",work:["School-based mental health","Behavioral supports","Service coordination","Scholar well-being"],resources:[
+  ["Find Behavioral Health resources","Search current Behavioral Health resources","search:behavioral health mental health"]
+ ]},
+ counseling:{name:"Counseling",purpose:"Counseling systems and supports for academic achievement, responsive services, and college/career readiness.",work:["Counseling processes","College & career readiness","Responsive services","Master scheduling"],resources:[
+  ["Find Counseling resources","Search current Counseling resources","search:counseling ASCA college career"]
+ ]},
+ css:{name:"Community & Student Services",purpose:"Districtwide scholar and family services, enrollment, records, mobility, and related operating processes.",work:["Enrollment & mobility","Scholar records","Hearings / releases","Scholar & family support"],resources:[
+  ["CSS Connect","Open the current CSS working resource","https://melatkins2-ops.github.io/css-connect-pilot/"],
+  ["Find related resources","Search CSS processes and tools","search:Community Student Services enrollment records"]
+ ]},
+ extended:{name:"Extended Learning",purpose:"Learning opportunities beyond the traditional school day, including extended-day programming and implementation support.",work:["Extended day","Program implementation","Partnership coordination","Program guidance"],resources:[
+  ["Extended Day Operations Hub","Open program guidance and operations","https://melatkins2-ops.github.io/extended-day-operations-hub/"],
+  ["Find related resources","Search Extended Learning resources","search:extended learning after school"]
+ ]},
+ sel:{name:"Social Emotional Learning",purpose:"Districtwide SEL, belonging, relationships, and schoolwide conditions that support scholars and adults.",work:["SEL implementation","Belonging & relationships","Adult SEL","Schoolwide supports"],resources:[
+  ["Find SEL resources","Search current SEL resources","search:SEL social emotional learning"]
+ ]},
+ federal:{name:"State & Federal Programs",purpose:"Program implementation, funding, monitoring, evidence, and guidance across state and federal programs.",work:["Title I","31a / state programs","Monitoring & evidence","Funding / allowability"],resources:[
+  ["Title I Resource Center","Open Title I guidance and tools","https://melatkins2-ops.github.io/grps-title-i-now/"],
+  ["FSS / KSSN Integration","Open coordinated family and community support resource","https://melatkins2-ops.github.io/grps-fss-kssn-integration-test/"],
+  ["Written Processes","Open current process resource","https://melatkins2-ops.github.io/grps-written-processes/"],
+  ["Find related resources","Search state and federal program resources","search:Title I 31a monitoring funding"]
+ ]},
+ summer:{name:"Summer School",purpose:"Annual summer-program planning, implementation, learning experiences, evaluation, and closeout.",work:["Program design","Implementation","Hands-on learning","Evaluation & closeout"],resources:[
+  ["Find Summer School resources","Search current Summer School resources","search:summer school program design evaluation"]
+ ]},
+ face:{name:"Family & Community Engagement",purpose:"Family partnership, engagement capacity, Parent University, and connections between schools, families, and community.",work:["Family engagement","Parent University","Family learning","Community connections"],resources:[
+  ["Parent University","Open the current family learning resource","https://melatkins2-ops.github.io/parent-university/"],
+  ["FSS / KSSN Integration","Open coordinated scholar/family support resource","https://melatkins2-ops.github.io/grps-fss-kssn-integration-test/"],
+  ["Find related resources","Search family engagement resources","search:family community engagement"]
+ ]},
+ health:{name:"School Health Services",purpose:"School-based health supports and connections that help scholars access learning and maintain well-being.",work:["School health","Nursing / health aide support","Health access","Health & attendance connections"],resources:[
+  ["Find Health resources","Search current school health resources","search:health nurse health aide"]
+ ]}
+};
+function openDeptHub(key){
+ const d=CSA_DEPT_HUBS[key],panel=document.getElementById('deptHubPanel'); if(!d||!panel)return;
+ const work=d.work.map(x=>`<span>${x}</span>`).join('');
+ const res=d.resources.map(r=>{
+   if(r[2].startsWith('search:')){
+     const q=r[2].slice(7).replace(/'/g,"\\'");
+     return `<button onclick="staffSearchTerm('${q}')"><div><strong>${r[0]}</strong><small>${r[1]}</small></div><b>→</b></button>`;
+   }
+   return `<a href="${r[2]}" target="_blank" rel="noopener"><div><strong>${r[0]}</strong><small>${r[1]}</small></div><b>Open ↗</b></a>`;
+ }).join('');
+ panel.innerHTML=`<div class="dept-panel-top"><button onclick="closeDeptHub()">← All departments</button><p>DEPARTMENT WORKSPACE</p><h2>${d.name}</h2><span>${d.purpose}</span></div>
+ <div class="dept-work-tags">${work}</div>
+ <div class="dept-resource-list"><h3>Start here</h3>${res}</div>`;
+ panel.classList.remove('hidden');
+ document.querySelector('.dept-index').classList.add('hidden');
+ panel.scrollIntoView({behavior:'smooth',block:'start'});
+}
+function closeDeptHub(){
+ const panel=document.getElementById('deptHubPanel'); if(panel)panel.classList.add('hidden');
+ const idx=document.querySelector('.dept-index'); if(idx)idx.classList.remove('hidden');
+}
 </script>
 
 </body></html>
