@@ -275,38 +275,358 @@ button,.gateway,.category-card,.dept-card,.tool-card,.resource-choice,.process-n
 </style>
 
 <style>.route-caution{font-size:14px;color:#6a7784;background:#f7f8fa;border-left:4px solid #d9782d;padding:12px 14px;margin-top:16px}.support-map-block{margin-top:24px;background:#f7f9fb;border:1px solid #dbe3ea;border-radius:12px;padding:20px}.support-map-block h4{margin-top:0;color:#123f68}.support-map-flow{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-top:14px}.support-map-flow span{background:#fff;border:1px solid #ccd9e3;border-radius:999px;padding:9px 12px;font-weight:700;color:#123f68;font-size:14px}.support-map-flow b{color:#71879a}</style>
+
+<style>
+.staff-home,.workspace-view{max-width:1120px;margin:0 auto}
+.staff-hero{padding:22px 0 18px;border-bottom:1px solid #dce4ea}
+.staff-kicker{font-size:12px;font-weight:800;letter-spacing:.12em;color:#1f5f99;margin:0 0 8px}
+.staff-hero h1{font-size:42px;line-height:1.08;color:#123f68;margin:0 0 12px}
+.staff-hero p,.workspace-lead{font-size:18px;line-height:1.5;color:#607487;max-width:820px;margin:0}
+.staff-search{background:#f4f7fa;border:1px solid #dbe4eb;border-radius:14px;padding:22px;margin:26px 0}
+.staff-search label{display:block;color:#123f68;font-weight:800;font-size:18px;margin-bottom:9px}
+.staff-search-row{display:grid;grid-template-columns:1fr auto;gap:8px}
+.staff-search-row input,.role-search-wrap input{width:100%;border:1px solid #b9c9d5;border-radius:8px;padding:14px 15px;background:#fff;font-size:16px}
+.staff-search-row button{border:0;border-radius:8px;background:#123f68;color:#fff;font-weight:800;padding:0 22px;cursor:pointer}
+.staff-quick-links{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.staff-quick-links button,.staff-secondary button{border:1px solid #cbd8e2;background:#fff;color:#315d7d;border-radius:999px;padding:8px 12px;font-weight:700;cursor:pointer}
+.staff-core-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.staff-core-card{background:#fff;border:1px solid #d9e3ea;border-radius:12px;padding:22px;text-align:left;cursor:pointer;min-height:175px;position:relative}
+.staff-core-card:hover{border-color:#9eb7ca;box-shadow:0 5px 16px rgba(18,63,104,.07)}
+.staff-card-label{font-size:12px;font-weight:800;color:#d9782d;letter-spacing:.08em}
+.staff-core-card strong,.staff-core-card small,.staff-core-card em{display:block}
+.staff-core-card strong{font-size:22px;color:#123f68;margin:8px 0}
+.staff-core-card small{font-size:15px;color:#607487;line-height:1.45}
+.staff-core-card em{font-size:14px;color:#1f5f99;font-style:normal;font-weight:800;margin-top:16px}
+.staff-secondary{display:flex;gap:9px;flex-wrap:wrap;margin:22px 0}
+.workspace-view h3{font-size:34px;color:#123f68;margin:0 0 10px}
+.role-search-wrap{max-width:560px;margin:24px 0 16px}
+.role-grid,.cross-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.role-grid article,.cross-grid article{background:#fff;border:1px solid #d9e3ea;border-radius:12px;padding:20px}
+.role-grid strong,.cross-grid strong{display:block;color:#123f68;font-size:19px;margin-bottom:8px}
+.role-grid p,.cross-grid p{font-size:14px;line-height:1.5;color:#566d7f;margin:8px 0}
+.role-grid button,.cross-grid button{border:0;background:transparent;color:#1f5f99;font-weight:800;padding:6px 0;cursor:pointer;text-align:left}
+@media(max-width:800px){
+ .staff-core-grid,.role-grid,.cross-grid{grid-template-columns:1fr}
+ .staff-search-row{grid-template-columns:1fr}
+ .staff-search-row button{padding:13px}
+ .staff-hero h1{font-size:34px}
+}
+</style>
+
+
+<style>
+/* Dynamic internal-workspace visual system */
+.staff-home{position:relative}
+.staff-hero{position:relative;overflow:hidden;background:linear-gradient(120deg,#f7fafc 0%,#fff 60%);border:1px solid #dbe4eb!important;border-radius:18px;padding:34px 36px!important;margin-top:8px}
+.staff-hero:after{content:"CSA";position:absolute;right:-18px;bottom:-45px;font-size:150px;font-weight:900;letter-spacing:-.08em;color:rgba(18,63,104,.045);pointer-events:none}
+.staff-hero h1{font-size:46px!important;max-width:760px}
+.staff-hero p{max-width:760px}
+.staff-search{margin-top:-16px!important;position:relative;z-index:2;max-width:960px;margin-left:auto!important;margin-right:auto!important;background:#fff!important;box-shadow:0 12px 28px rgba(18,63,104,.10);border-radius:14px!important}
+.staff-search-row input{font-size:17px!important;padding:16px!important}
+.staff-search-row button{min-width:110px;transition:.18s ease}
+.staff-search-row button:hover{transform:translateY(-1px)}
+.staff-quick-links button{transition:.15s ease}
+.staff-quick-links button:hover{border-color:#1f5f99;background:#f4f8fb}
+.workspace-pulse{display:grid;grid-template-columns:auto repeat(4,1fr);gap:8px;align-items:stretch;margin:28px 0 36px}
+.pulse-label{display:flex;align-items:center;gap:7px;padding:0 10px 0 0;font-size:11px;font-weight:900;letter-spacing:.1em;color:#607487}
+.pulse-label span{width:8px;height:8px;background:#d9782d;border-radius:50%}
+.workspace-pulse button{border:0;border-left:1px solid #dce4ea;background:transparent;text-align:left;padding:7px 14px;cursor:pointer}
+.workspace-pulse b,.workspace-pulse small{display:block}.workspace-pulse b{color:#123f68;font-size:14px}.workspace-pulse small{color:#738696;margin-top:3px}
+.workspace-pulse button:hover b{color:#1f5f99}
+.workspace-section-head{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;margin-bottom:14px}
+.workspace-section-head h2{font-size:29px;color:#123f68;margin:0}.workspace-section-head p{color:#718393;margin:0 0 4px}
+.dynamic-grid{grid-template-columns:1.15fr .85fr!important;grid-auto-rows:minmax(175px,auto)}
+.dynamic-grid .staff-core-card{overflow:hidden;transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease}
+.dynamic-grid .staff-core-card:hover{transform:translateY(-4px);box-shadow:0 14px 26px rgba(18,63,104,.10)}
+.dynamic-grid .card-dept{border-top:5px solid #123f68}
+.dynamic-grid .card-find{border-top:5px solid #d9782d}
+.dynamic-grid .card-roles{border-top:5px solid #477d9f}
+.dynamic-grid .card-cross{border-top:5px solid #7b8792}
+.dynamic-grid .card-dept:after,.dynamic-grid .card-find:after,.dynamic-grid .card-roles:after,.dynamic-grid .card-cross:after{position:absolute;right:18px;top:14px;font-size:48px;font-weight:900;color:rgba(18,63,104,.055)}
+.dynamic-grid .card-dept:after{content:"DEPT"}.dynamic-grid .card-find:after{content:"FIND"}.dynamic-grid .card-roles:after{content:"ROLE"}.dynamic-grid .card-cross:after{content:"CSA"}
+.staff-core-card em{position:absolute;bottom:20px;left:22px}
+.staff-core-card{padding-bottom:52px!important}
+.workspace-glance{display:grid;grid-template-columns:1.2fr repeat(4,1fr);gap:0;margin:34px 0 18px;border:1px solid #dbe4eb;border-radius:14px;background:#fff;overflow:hidden}
+.glance-title{padding:18px 20px;background:#f5f8fa}.glance-title strong{color:#123f68}
+.workspace-glance button{border:0;border-left:1px solid #e0e7ec;background:#fff;text-align:left;padding:17px;cursor:pointer}
+.workspace-glance button:hover{background:#f8fafc}
+.workspace-glance span,.workspace-glance small{display:block}.workspace-glance span{font-weight:800;color:#123f68;font-size:15px}.workspace-glance small{color:#728594;margin-top:5px;line-height:1.3}
+.staff-secondary-label{font-size:11px;font-weight:900;letter-spacing:.1em;color:#748796;margin-top:24px}
+.staff-secondary{margin-top:9px!important}
+.workspace-view{animation:workspaceIn .22s ease-out}
+@keyframes workspaceIn{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:none}}
+.role-grid article,.cross-grid article{position:relative;transition:.16s ease}
+.role-grid article:hover,.cross-grid article:hover{transform:translateY(-2px);box-shadow:0 8px 18px rgba(18,63,104,.07);border-color:#b4c7d5}
+.role-grid article:before,.cross-grid article:before{content:"";position:absolute;left:0;top:18px;width:4px;height:34px;background:#d9782d;border-radius:0 4px 4px 0}
+@media(max-width:900px){
+ .workspace-pulse{grid-template-columns:1fr 1fr}.pulse-label{grid-column:1/-1}
+ .dynamic-grid{grid-template-columns:1fr!important}
+ .workspace-glance{grid-template-columns:1fr 1fr}.glance-title{grid-column:1/-1}
+ .workspace-glance button:nth-child(even){border-left:0}
+}
+@media(max-width:620px){
+ .staff-hero{padding:25px 22px!important}.staff-hero h1{font-size:34px!important}.staff-hero:after{font-size:100px}
+ .workspace-pulse{grid-template-columns:1fr 1fr}
+ .workspace-section-head{display:block}.workspace-section-head>p{margin-top:6px}
+ .workspace-glance{grid-template-columns:1fr}.workspace-glance button{border-left:0;border-top:1px solid #e0e7ec}
+}
+</style>
+
+
+<style>
+/* Homepage top reset: tighter, cleaner, less repetitive */
+.staff-home{padding-top:4px}
+.staff-hero{
+  min-height:0!important;
+  padding:26px 30px 28px!important;
+  margin-top:4px!important;
+  border-radius:14px!important;
+  background:#fff!important;
+  border-left:5px solid #d9782d!important;
+  box-shadow:none!important;
+}
+.staff-hero:after{display:none!important}
+.staff-hero h1{
+  font-size:36px!important;
+  line-height:1.08!important;
+  max-width:none!important;
+  margin-bottom:9px!important;
+  letter-spacing:-.025em;
+}
+.staff-hero p{
+  font-size:16px!important;
+  line-height:1.45!important;
+  max-width:900px!important;
+}
+.hero-purpose{display:flex;gap:18px;margin-top:16px;font-size:13px;font-weight:800;color:#315d7d}
+.hero-purpose span{position:relative}
+.hero-purpose span+span:before{content:"";width:4px;height:4px;background:#d9782d;border-radius:50%;position:absolute;left:-11px;top:7px}
+.staff-search{
+  max-width:none!important;
+  margin:14px 0 30px!important;
+  padding:0!important;
+  background:transparent!important;
+  border:0!important;
+  box-shadow:none!important;
+}
+.staff-search label{
+  font-size:14px!important;
+  margin:0 0 7px 2px!important;
+  color:#536c80!important;
+}
+.staff-search-row{
+  grid-template-columns:1fr 96px!important;
+  gap:7px!important;
+  max-width:820px;
+}
+.staff-search-row input{
+  padding:13px 14px!important;
+  font-size:15px!important;
+  border-radius:8px!important;
+  border:1px solid #bdccd7!important;
+}
+.staff-search-row button{
+  min-width:0!important;
+  border-radius:8px!important;
+  font-size:14px;
+}
+.staff-quick-links,.workspace-pulse{display:none!important}
+.workspace-section-head{
+  border-top:1px solid #dce4ea;
+  padding-top:24px;
+  margin-top:0!important;
+}
+.workspace-section-head h2{font-size:27px!important}
+@media(max-width:620px){
+ .staff-hero{padding:22px 20px!important}
+ .staff-hero h1{font-size:30px!important}
+ .hero-purpose{gap:15px;flex-wrap:wrap}
+ .staff-search-row{grid-template-columns:1fr!important;max-width:none}
+ .staff-search-row button{padding:12px!important}
+}
+</style>
+
+
+<style>
+/* Cohesive workbench redesign */
+.staff-home{max-width:1160px!important;padding-top:26px!important}
+.staff-hero,.workspace-glance,.workspace-pulse{display:none!important}
+.workbench-top{
+  display:grid;
+  grid-template-columns:minmax(280px,.85fr) minmax(480px,1.4fr);
+  gap:38px;
+  align-items:end;
+  padding:12px 0 30px;
+  border-bottom:1px solid #d9e2e9;
+}
+.workbench-copy h1{font-size:36px;line-height:1.08;color:#123f68;margin:0 0 8px;letter-spacing:-.025em}
+.workbench-copy p:last-child{font-size:16px;color:#657b8c;margin:0}
+.workbench-search{display:grid;grid-template-columns:1fr 96px;gap:8px}
+.workbench-search input{width:100%;padding:15px 16px;border:1px solid #b9c9d5;border-radius:9px;background:#fff;font-size:15px}
+.workbench-search button{border:0;border-radius:9px;background:#123f68;color:#fff;font-weight:800;cursor:pointer}
+.staff-search{display:none!important}
+.compact-head{display:block!important;border:0!important;padding:26px 0 12px!important;margin:0!important}
+.compact-head h2{font-size:25px!important;margin:0!important;color:#123f68}
+.dynamic-grid{
+  display:grid!important;
+  grid-template-columns:repeat(2,minmax(0,1fr))!important;
+  gap:14px!important;
+  grid-auto-rows:auto!important;
+}
+.dynamic-grid .staff-core-card{
+  min-height:165px!important;
+  padding:22px 24px!important;
+  border:1px solid #d5e0e7!important;
+  border-radius:12px!important;
+  border-top:1px solid #d5e0e7!important;
+  box-shadow:none!important;
+  background:#fff!important;
+}
+.dynamic-grid .staff-core-card:hover{transform:translateY(-2px)!important;border-color:#91adc0!important;box-shadow:0 8px 18px rgba(18,63,104,.07)!important}
+.dynamic-grid .staff-core-card:after{display:none!important}
+.staff-card-label{display:none!important}
+.staff-core-card strong{font-size:21px!important;margin:0 0 6px!important}
+.card-tag{display:inline-block;background:#eef4f8;color:#315d7d;border-radius:999px;padding:5px 9px;font-size:11px;font-weight:800;margin-bottom:12px}
+.staff-core-card small{font-size:14px!important;line-height:1.45!important;max-width:90%}
+.staff-core-card em{position:static!important;margin-top:15px!important;font-size:13px!important}
+.card-dept{border-left:5px solid #123f68!important}
+.card-find{border-left:5px solid #d9782d!important}
+.card-roles{border-left:5px solid #4d819f!important}
+.card-cross{border-left:5px solid #7c8993!important}
+.staff-secondary-label{margin-top:26px!important;border-top:1px solid #dce4ea;padding-top:20px}
+.staff-secondary{margin-bottom:28px!important}
+@media(max-width:850px){
+ .workbench-top{grid-template-columns:1fr;gap:18px}
+ .dynamic-grid{grid-template-columns:1fr!important}
+}
+@media(max-width:600px){
+ .staff-home{padding-top:14px!important}
+ .workbench-copy h1{font-size:30px}
+ .workbench-search{grid-template-columns:1fr}
+ .workbench-search button{padding:12px}
+}
+</style>
+
+
+<style>
+/* CSA Work Hub — task-responsive home */
+.csa-hub{max-width:1120px;margin:0 auto;padding:28px 0}
+.hub-intro{display:grid;grid-template-columns:1fr;max-width:900px;margin-bottom:28px}
+.hub-kicker{font-size:12px;font-weight:900;letter-spacing:.13em;color:#d9782d;margin:0 0 8px}
+.hub-intro h1{font-size:38px;line-height:1.08;color:#123f68;margin:0 0 9px;letter-spacing:-.025em}
+.hub-intro>p{font-size:17px;color:#607487;margin:0 0 20px}
+.hub-search{display:grid;grid-template-columns:1fr 94px;gap:8px;max-width:820px}
+.hub-search input{padding:14px 15px;border:1px solid #b9c9d5;border-radius:9px;background:#fff;font-size:15px}
+.hub-search button{border:0;border-radius:9px;background:#123f68;color:#fff;font-weight:800;cursor:pointer}
+.hub-task-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.hub-task-grid button{position:relative;min-height:158px;padding:20px;text-align:left;background:#fff;border:1px solid #d6e0e7;border-radius:11px;cursor:pointer;transition:.16s ease}
+.hub-task-grid button:hover{transform:translateY(-2px);border-color:#92adbf;box-shadow:0 7px 16px rgba(18,63,104,.07)}
+.hub-task-grid span{font-size:11px;font-weight:900;color:#d9782d}
+.hub-task-grid strong,.hub-task-grid small{display:block}
+.hub-task-grid strong{font-size:18px;line-height:1.18;color:#123f68;margin:12px 0 7px}
+.hub-task-grid small{font-size:13px;line-height:1.42;color:#64798a}
+.hub-footer-links{display:flex;gap:8px;flex-wrap:wrap;border-top:1px solid #dce4ea;margin-top:24px;padding-top:17px}
+.hub-footer-links button{border:0;background:transparent;color:#315d7d;font-weight:800;cursor:pointer;padding:6px 14px 6px 0}
+.work-result-shell{max-width:1100px;margin:0 auto}
+.work-back{border:0;background:transparent;color:#315d7d;font-weight:800;padding:0;margin:0 0 22px;cursor:pointer}
+#workResult h2{font-size:36px;color:#123f68;margin:0 0 8px}
+.work-lead{font-size:17px;color:#607487;max-width:760px;margin:0 0 28px}
+.work-layout{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(260px,.65fr);gap:28px}
+.work-layout h3{font-size:15px;color:#607487;text-transform:uppercase;letter-spacing:.06em;margin:0 0 12px}
+.work-task-list{display:grid;gap:8px}
+.work-task{display:grid;grid-template-columns:34px 1fr auto;gap:12px;align-items:center;width:100%;text-align:left;background:#fff;border:1px solid #d8e2e9;border-radius:10px;padding:15px;cursor:pointer}
+.work-task:hover{border-color:#93adbf;background:#fbfdfe}
+.work-task>span{font-size:11px;font-weight:900;color:#d9782d}
+.work-task strong,.work-task small{display:block}.work-task strong{color:#123f68;font-size:16px}.work-task small{color:#6b7f8e;margin-top:3px}
+.work-task>b{color:#315d7d}
+.work-layout aside{background:#f5f8fa;border-left:4px solid #d9782d;border-radius:8px;padding:20px;height:max-content}
+.work-layout aside p{font-size:14px;line-height:1.55;color:#566e80}
+.work-layout aside button{display:block;border:0;background:transparent;color:#1f5f99;font-weight:800;padding:7px 0;cursor:pointer;text-align:left}
+@media(max-width:900px){.hub-task-grid{grid-template-columns:repeat(2,1fr)}.work-layout{grid-template-columns:1fr}}
+@media(max-width:560px){.hub-task-grid{grid-template-columns:1fr}.hub-search{grid-template-columns:1fr}.hub-search button{padding:12px}.hub-intro h1{font-size:31px}.hub-task-grid button{min-height:auto}}
+</style>
+
+
+<style>
+/* Three-function CSA homepage */
+.three-home{max-width:980px;margin:0 auto;padding:64px 20px 52px}
+.three-intro{max-width:760px;margin-bottom:42px}
+.three-kicker{font-size:12px;font-weight:900;letter-spacing:.14em;color:#d9782d;margin:0 0 10px}
+.three-intro h1{font-size:50px;line-height:1.02;letter-spacing:-.035em;color:#123f68;margin:0 0 14px}
+.three-intro>p{font-size:19px;line-height:1.5;color:#607487;margin:0;max-width:720px}
+.three-search{max-width:820px;margin-bottom:48px}
+.three-search label{display:block;font-size:14px;font-weight:800;color:#123f68;margin-bottom:8px}
+.three-search>div{display:grid;grid-template-columns:1fr 100px;gap:8px}
+.three-search input,.second-search input{width:100%;padding:16px;border:1px solid #b7c8d4;border-radius:9px;background:#fff;font-size:16px}
+.three-search button,.second-search button{border:0;border-radius:9px;background:#123f68;color:#fff;font-weight:800;cursor:pointer}
+.three-actions{border-top:1px solid #dce4ea}
+.three-actions>button{width:100%;display:grid;grid-template-columns:48px 1fr auto;gap:18px;align-items:center;text-align:left;border:0;border-bottom:1px solid #dce4ea;background:transparent;padding:25px 4px;cursor:pointer}
+.three-actions>button:hover{background:#f8fafb}
+.three-num{font-size:11px;font-weight:900;color:#d9782d}
+.three-copy strong,.three-copy small{display:block}
+.three-copy strong{font-size:23px;color:#123f68;margin-bottom:5px}
+.three-copy small{font-size:15px;color:#667b8b}
+.three-arrow{font-size:24px;color:#315d7d}
+.second-level{max-width:980px;margin:0 auto;padding:38px 20px 60px}
+.second-back{border:0;background:transparent;color:#315d7d;font-weight:800;padding:0;margin-bottom:34px;cursor:pointer}
+.second-level h2{font-size:38px;line-height:1.08;color:#123f68;margin:0 0 10px}
+.second-lead{font-size:17px;color:#607487;max-width:720px;margin:0 0 32px}
+.second-options{border-top:1px solid #dce4ea}
+.second-options>button{width:100%;display:grid;grid-template-columns:1fr auto;text-align:left;border:0;border-bottom:1px solid #dce4ea;background:transparent;padding:20px 4px;cursor:pointer}
+.second-options>button:hover{background:#f8fafb}
+.second-options strong,.second-options small{display:block}
+.second-options strong{font-size:18px;color:#123f68;margin-bottom:4px}
+.second-options small{font-size:14px;color:#667b8b;grid-column:1}
+.second-options b{grid-column:2;grid-row:1/3;align-self:center;color:#315d7d;font-size:19px}
+.second-search{display:grid;grid-template-columns:1fr 100px;gap:8px;max-width:820px;margin-bottom:30px}
+@media(max-width:600px){
+ .three-home{padding-top:36px}.three-intro h1{font-size:38px}
+ .three-search>div,.second-search{grid-template-columns:1fr}.three-search button,.second-search button{padding:13px}
+ .three-actions>button{grid-template-columns:34px 1fr auto;gap:10px}.three-copy strong{font-size:20px}
+ .second-level h2{font-size:31px}
+}
+</style>
+
 </head>
 <body><a class="skip-link" href="#mainContent">Skip to main content</a>
 <header><div class="topbar"><div class="brand"><img class="brand-logo" src="https://grps-cdn.fxbrt.com/downloads/communications/grpsmychoicelogo.png" alt="Grand Rapids Public Schools — GRPS My Choice logo"><div class="brand-copy"><h1>Community &amp; Student Affairs (CSA)<br>Operating &amp; Resource Library</h1><small>One CSA · Clear processes · Stronger coordination · Better support</small></div></div><button class="mobile-nav-toggle" id="mobileNavToggle" aria-expanded="false" aria-controls="primaryNav" onclick="toggleMobileNav()">Menu</button><div class="nav" id="primaryNav" aria-label="Primary navigation"><button class="active" data-view="home">Home</button><button data-view="findsupport">Find Support</button><button data-view="library">Operating Library</button><button data-view="departments">Departments</button><button data-view="routing">How CSA Connects Support</button><button data-view="contributor">Builder</button><button class="quick-search-btn" onclick="openGlobalSearch()" aria-label="Search the CSA Operating and Resource Library">Search <span class="keyboard-hint">Ctrl/⌘ K</span></button></div></div></header>
 <main id="mainContent" tabindex="-1">
 <section id="home" class="view">
-<div class="csa-photo-hero">
-  <div class="csa-photo-wrap"><img src="https://grps-cdn.fxbrt.com/downloads/_photogalleries_/grand_rapids_university_prep-090.jpg" alt="Grand Rapids University Preparatory Academy scholars"><div class="photo-overlay"><strong>People. Possibilities.<br>Brighter Futures.</strong></div></div>
-  <div class="csa-hero-prompt"><h2>What do you need<br>to get done today?</h2><p>Find support. Find resources. Explore CSA.<br>Start with what you need.</p></div>
+<div class="three-home">
+  <div class="three-intro">
+    <p class="three-kicker">COMMUNITY &amp; STUDENT AFFAIRS</p>
+    <h1>Everything CSA. One place.</h1>
+    <p>Find the guidance, resources, people, and processes that help us do our work.</p>
+  </div>
+
+  <div class="three-search">
+    <label for="staffQuickSearch">Find something</label>
+    <div>
+      <input id="staffQuickSearch" type="search" placeholder="What are you looking for?">
+      <button onclick="staffSearch()" aria-label="Search">Search</button>
+    </div>
+  </div>
+
+  <div class="three-actions">
+    <button onclick="showView('explorecsa')">
+      <span class="three-num">01</span>
+      <span class="three-copy">
+        <strong>Explore CSA</strong>
+        <small>Understand our departments, supports, roles, and connections.</small>
+      </span>
+      <span class="three-arrow">→</span>
+    </button>
+
+    <button onclick="showView('getworkdone')">
+      <span class="three-num">02</span>
+      <span class="three-copy">
+        <strong>Get Work Done</strong>
+        <small>Go to processes, tools, forms, guidance, and working resources.</small>
+      </span>
+      <span class="three-arrow">→</span>
+    </button>
+  </div>
 </div>
-<div class="home-action-grid csa-primary-actions">
-  <button class="home-action blue" onclick="showView('findsupport')">
-    <span class="home-action-icon">→</span>
-    <span><b>Find Support</b><small>Something is happening with a scholar, family, or school. Start with what’s going on and find where to begin.</small></span>
-    <span class="action-arrow">→</span>
-  </button>
-  <button class="home-action neutral" onclick="showView('library')">
-    <span class="home-action-icon">⌕</span>
-    <span><b>Find a Resource</b><small>Search CSA tools, guidance, processes, forms, reports, and other resources by what you need to do.</small></span>
-    <span class="action-arrow">→</span>
-  </button>
-  <button class="home-action neutral" onclick="showView('departments')">
-    <span class="home-action-icon">CSA</span>
-    <span><b>Explore CSA</b><small>Browse departments, programs, roles, and supports across Community & Student Affairs.</small></span>
-    <span class="action-arrow">→</span>
-  </button>
-</div>
-<div class="csa-secondary-actions">
-  <span class="secondary-label">More tools</span>
-  <button class="btn ghost" onclick="showView('builder')">Build or Update a Resource</button>
-  <button class="btn ghost" onclick="showView('nowrongdoor')">How CSA Connects Support</button>
-</div>
-<div class="home-impact-strip"><span>Remove barriers</span><span>Create opportunities</span><span>Build partnerships</span><span>Support brighter futures</span></div>
 </section>
 
 <section id="findsupport" class="view hidden">
@@ -373,6 +693,160 @@ button,.gateway,.category-card,.dept-card,.tool-card,.resource-choice,.process-n
   <div id="fsDetail" class="hidden">
     <button class="btn ghost" onclick="fsBack()">← Back to support choices</button>
     <div id="fsDetailContent" class="nwd-route-panel" style="margin-top:16px"></div>
+  </div>
+</section>
+
+
+<section id="supportsroles" class="view hidden">
+  <div class="workspace-view">
+    <p class="staff-kicker">CSA SUPPORTS &amp; ROLES</p>
+    <h3>Who does what—and when should I involve them?</h3>
+    <p class="workspace-lead">This replaces the old static service booklet approach. Role descriptions stay stable; changing employee names and assignments should live in a separate current directory.</p>
+
+    <div class="role-search-wrap">
+      <input id="roleSearch" type="search" placeholder="Search a role or support…" oninput="filterRoleCards()">
+    </div>
+
+    <div class="role-grid" id="roleGrid">
+      <article data-role="family support specialist fss attendance basic needs family resources">
+        <strong>Family Support Specialist (FSS)</strong>
+        <p><b>Start here when:</b> family circumstances or barriers are affecting attendance, engagement, or school success.</p>
+        <p><b>Often works with:</b> KSSN, attendance teams, counseling, McKinney-Vento, school leadership.</p>
+        <button onclick="staffSearchTerm('Family Support Specialist FSS')">Find FSS resources →</button>
+      </article>
+      <article data-role="kssn community school coordinator resources partnerships family">
+        <strong>KSSN / Community School Support</strong>
+        <p><b>Start here when:</b> support requires coordination among the school, family, community partners, or services.</p>
+        <p><b>Often works with:</b> FSS, counseling, behavioral health, school leadership, community partners.</p>
+        <button onclick="staffSearchTerm('KSSN community school')">Find KSSN resources →</button>
+      </article>
+      <article data-role="counseling counselor academic social emotional college career">
+        <strong>Counseling</strong>
+        <p><b>Start here when:</b> a scholar needs academic, social-emotional, transition, or college/career support.</p>
+        <p><b>Often works with:</b> Behavioral Health, Career to College, FSS/KSSN, school teams.</p>
+        <button onclick="staffSearchTerm('counseling')">Find counseling resources →</button>
+      </article>
+      <article data-role="behavioral health mental health">
+        <strong>Behavioral Health</strong>
+        <p><b>Start here when:</b> specialized mental-health or behavioral-health support may be needed.</p>
+        <p><b>Often works with:</b> Counseling, school teams, Health, FSS/KSSN.</p>
+        <button onclick="staffSearchTerm('behavioral health mental health')">Find Behavioral Health resources →</button>
+      </article>
+      <article data-role="behavioral specialist behavior pbis mtss">
+        <strong>Behavioral Specialists / PBIS</strong>
+        <p><b>Start here when:</b> individual or systems-level behavior support, PBIS, or intervention support is needed.</p>
+        <p><b>Often works with:</b> SEL, MTSS, counseling, school teams.</p>
+        <button onclick="staffSearchTerm('behavior PBIS MTSS')">Find behavior resources →</button>
+      </article>
+      <article data-role="youth advocate engagement relationships conflict">
+        <strong>Youth Advocates</strong>
+        <p><b>Start here when:</b> a scholar needs stronger connection, engagement, relationship, or behavior support.</p>
+        <p><b>Often works with:</b> behavioral supports, counseling, and school teams.</p>
+        <button onclick="staffSearchTerm('youth advocate')">Find related resources →</button>
+      </article>
+      <article data-role="health nurse health aide medical">
+        <strong>Health / Nursing</strong>
+        <p><b>Start here when:</b> a health need affects school participation or requires school-based health support.</p>
+        <p><b>Often works with:</b> attendance, behavioral health, FSS, school teams.</p>
+        <button onclick="staffSearchTerm('health nurse')">Find health resources →</button>
+      </article>
+      <article data-role="sel social emotional learning tier i">
+        <strong>Social Emotional Learning (SEL)</strong>
+        <p><b>Start here when:</b> Tier I social-emotional learning, belonging, climate, or adult SEL needs strengthening.</p>
+        <p><b>Often works with:</b> PBIS, MTSS, counseling, school leadership.</p>
+        <button onclick="staffSearchTerm('SEL social emotional learning')">Find SEL resources →</button>
+      </article>
+      <article data-role="extended learning after school">
+        <strong>Extended Learning</strong>
+        <p><b>Start here when:</b> programming or learning support beyond the regular school day is involved.</p>
+        <button onclick="staffSearchTerm('extended learning after school')">Find Extended Learning resources →</button>
+      </article>
+      <article data-role="summer school summer learning">
+        <strong>Summer School</strong>
+        <p><b>Start here when:</b> summer programming, planning, implementation, or resources are needed.</p>
+        <button onclick="staffSearchTerm('summer school')">Find Summer School resources →</button>
+      </article>
+      <article data-role="family community engagement fce">
+        <strong>Family &amp; Community Engagement</strong>
+        <p><b>Start here when:</b> family partnership, engagement, communication, or participation needs strengthening.</p>
+        <button onclick="staffSearchTerm('family community engagement')">Find FCE resources →</button>
+      </article>
+      <article data-role="state federal programs title i 31a funding compliance">
+        <strong>State &amp; Federal Programs</strong>
+        <p><b>Start here when:</b> Title I, 31a, funding, allowability, monitoring, or program requirements are involved.</p>
+        <button onclick="staffSearchTerm('Title I 31a state federal programs')">Find program resources →</button>
+      </article>
+      <article data-role="assessment evaluation data">
+        <strong>Assessment &amp; Evaluation</strong>
+        <p><b>Start here when:</b> assessment, data analysis, reporting, or program evaluation support is needed.</p>
+        <button onclick="staffSearchTerm('assessment evaluation data')">Find data resources →</button>
+      </article>
+      <article data-role="community student services enrollment hearing section 6">
+        <strong>Community &amp; Student Services</strong>
+        <p><b>Start here when:</b> enrollment, access, hearings, releases, or another Community &amp; Student Services process is involved.</p>
+        <button onclick="staffSearchTerm('Community Student Services enrollment')">Find CSS resources →</button>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="crosscsa" class="view hidden">
+  <div class="workspace-view">
+    <p class="staff-kicker">WORK ACROSS CSA</p>
+    <h3>Some work does not belong to one department.</h3>
+    <p class="workspace-lead">Start with the work. See the CSA areas that may need to be connected and jump directly to related resources.</p>
+
+    <div class="cross-grid">
+      <article><strong>Attendance</strong><p>FSS · KSSN · Counseling · Health · Behavioral Health · school teams</p><button onclick="staffSearchTerm('attendance')">Open attendance resources →</button></article>
+      <article><strong>Mental Health &amp; Well-Being</strong><p>Counseling · Behavioral Health · Health · FSS/KSSN · school teams</p><button onclick="staffSearchTerm('mental health counseling behavioral health')">Open related resources →</button></article>
+      <article><strong>Behavior / PBIS / MTSS</strong><p>Behavioral Specialists · Youth Advocates · SEL · Counseling · school teams</p><button onclick="staffSearchTerm('behavior PBIS MTSS SEL')">Open related resources →</button></article>
+      <article><strong>Family Support &amp; Basic Needs</strong><p>FSS · KSSN · McKinney-Vento · Family &amp; Community Engagement</p><button onclick="staffSearchTerm('family support basic needs McKinney-Vento')">Open related resources →</button></article>
+      <article><strong>Extended &amp; Summer Learning</strong><p>Extended Learning · Summer School · schools · family engagement · funding/program support</p><button onclick="staffSearchTerm('extended learning summer school')">Open related resources →</button></article>
+      <article><strong>Funding / Compliance / Program Design</strong><p>State &amp; Federal Programs · Assessment &amp; Evaluation · program leads · school leadership</p><button onclick="staffSearchTerm('Title I 31a funding compliance evaluation')">Open related resources →</button></article>
+    </div>
+  </div>
+</section>
+
+
+<section id="workhub" class="view hidden">
+  <div class="work-result-shell">
+    <button class="work-back" onclick="showView('home')">← Back to Work Hub</button>
+    <div id="workResult"></div>
+  </div>
+</section>
+
+
+<section id="explorecsa" class="view hidden">
+  <div class="second-level">
+    <button class="second-back" onclick="showView('home')">← Home</button>
+    <p class="three-kicker">EXPLORE CSA</p>
+    <h2>Understand how CSA works.</h2>
+    <p class="second-lead">Explore the structure, supports, roles, and connections across Community &amp; Student Affairs.</p>
+    <div class="second-options">
+      <button onclick="showView('departments')"><strong>Departments</strong><small>See CSA departments and their working resources.</small><b>→</b></button>
+      <button onclick="showView('supportsroles')"><strong>Supports &amp; Roles</strong><small>Understand what roles do and when to involve them.</small><b>→</b></button>
+      <button onclick="showView('crosscsa')"><strong>How CSA Connects</strong><small>See where work overlaps across teams.</small><b>→</b></button>
+    </div>
+  </div>
+</section>
+
+<section id="getworkdone" class="view hidden">
+  <div class="second-level">
+    <button class="second-back" onclick="showView('home')">← Home</button>
+    <p class="three-kicker">GET WORK DONE</p>
+    <h2>Go directly to the resource you need.</h2>
+    <p class="second-lead">Find the current process, tool, form, guidance, training, report, or working resource.</p>
+    <div class="second-search">
+      <input id="workSearch" type="search" placeholder="Search CSA resources…">
+      <button onclick="searchWorkDone()">Search</button>
+    </div>
+    <div class="second-options work-options">
+      <button onclick="staffSearchTerm('process SOP')"><strong>Processes</strong><small>Written processes and operating guidance.</small><b>→</b></button>
+      <button onclick="staffSearchTerm('form tool template')"><strong>Tools &amp; Forms</strong><small>Forms, templates, builders, and tools.</small><b>→</b></button>
+      <button onclick="staffSearchTerm('guidance')"><strong>Guidance</strong><small>Program, funding, and implementation guidance.</small><b>→</b></button>
+      <button onclick="staffSearchTerm('training professional development')"><strong>Training</strong><small>Professional learning and training resources.</small><b>→</b></button>
+      <button onclick="staffSearchTerm('report evaluation data')"><strong>Reports &amp; Data</strong><small>Reports, evaluations, dashboards, and data resources.</small><b>→</b></button>
+    </div>
   </div>
 </section>
 
@@ -1973,6 +2447,126 @@ function fsBehaviorResult(kind){
  const m={individual:["Start with the school’s behavior/support process","An individual concern may involve behavioral support, Youth Advocates, Counseling, or the school support team depending on what is happening."],relationship:["Start with connection and relationship supports","Youth Advocate, Counseling, restorative/behavioral supports, or other school-based supports may be appropriate."],mental:["Consider Counseling / Behavioral Health alongside behavior support","Behavior can be a signal of another need. Avoid treating the behavior pathway as separate when mental health or emotional well-being may be contributing."],schoolwide:["Use Tier I PBIS / SEL / MTSS supports","A schoolwide pattern should route to systems-level support rather than treating every concern as an individual referral."],unclear:["Understand what is driving the behavior first","Start with the school team and available support staff to identify patterns, context, and barriers before deciding on the intervention."]};
  const x=m[kind]||m.unclear; document.getElementById('fsDetailContent').innerHTML=`<p class="eyebrow">WHERE TO START</p><h3>${x[0]}</h3><p class="lead">${x[1]}</p><div class="nwd-standard"><strong>Keep the supports connected</strong><p>Behavior, attendance, mental health, relationships, and family barriers may overlap. Bring in the right supports without creating separate disconnected plans.</p></div><button class="btn" onclick="quickTask('behavior PBIS SEL MTSS youth advocate counseling')">Find current behavior and engagement resources</button>`;
 }
+</script>
+
+
+<script>
+function staffSearch(){
+  const q=(document.getElementById('staffQuickSearch')?.value||'').trim();
+  if(!q){ showView('library'); return; }
+  staffSearchTerm(q);
+}
+function staffSearchTerm(q){
+  showView('library');
+  setTimeout(()=>{
+    const candidates=[
+      document.querySelector('#library input[type="search"]'),
+      document.querySelector('#library input[type="text"]'),
+      document.getElementById('searchInput'),
+      document.getElementById('resourceSearch'),
+      document.getElementById('librarySearch')
+    ].filter(Boolean);
+    const input=candidates[0];
+    if(input){
+      input.value=q;
+      input.dispatchEvent(new Event('input',{bubbles:true}));
+      input.dispatchEvent(new Event('change',{bubbles:true}));
+      input.focus();
+    } else if(typeof quickTask==='function'){
+      quickTask(q);
+    }
+  },50);
+}
+function filterRoleCards(){
+  const q=(document.getElementById('roleSearch')?.value||'').toLowerCase().trim();
+  document.querySelectorAll('#roleGrid article').forEach(card=>{
+    const hay=(card.textContent+' '+(card.dataset.role||'')).toLowerCase();
+    card.style.display=hay.includes(q)?'block':'none';
+  });
+}
+document.addEventListener('keydown',e=>{
+  if(e.key==='Enter' && e.target && e.target.id==='staffQuickSearch') staffSearch();
+});
+</script>
+
+
+<script>
+const CSA_WORK = {
+ scholar:{title:"Support a scholar",lead:"Bring the right supports together around the scholar’s need.",tasks:[
+  ["Attendance","Address attendance barriers or chronic absence","attendance"],
+  ["Behavior & engagement","Respond to behavior, engagement, relationships, or connection to school","behavior PBIS youth advocate"],
+  ["Mental health & well-being","Connect counseling and behavioral-health supports when appropriate","counseling behavioral health mental health"],
+  ["Health","Find school-based health and nursing supports","health nurse"],
+  ["College & career","Support planning, transitions, and postsecondary readiness","college career counseling"]
+ ],roles:"FSS · KSSN · Counseling · Behavioral Health · Health · Behavioral Specialists · Youth Advocates · Career to College"},
+ family:{title:"Support a family",lead:"Start with the family need, then connect the appropriate CSA supports without making the family navigate our structure.",tasks:[
+  ["Basic needs","Food, clothing, and other barriers affecting school success","family support basic needs"],
+  ["Housing instability","McKinney-Vento and related family supports","McKinney-Vento housing"],
+  ["Resource navigation","Connect families to school and community resources","FSS KSSN community resources"],
+  ["Family engagement","Strengthen communication, partnership, and participation","family community engagement"]
+ ],roles:"FSS · KSSN · Family & Community Engagement · McKinney-Vento · Counseling · Community & Student Services"},
+ school:{title:"Strengthen a school system",lead:"Use CSA resources to strengthen schoolwide systems, routines, and conditions for scholars.",tasks:[
+  ["MTSS","Build or strengthen multi-tiered systems of support","MTSS"],
+  ["Attendance systems","Strengthen attendance teams, routines, and interventions","attendance team Strive for 5"],
+  ["PBIS & behavior","Strengthen Tier I behavior systems and supports","PBIS behavior"],
+  ["SEL","Strengthen social-emotional learning, belonging, and climate","SEL social emotional learning"],
+  ["Teaming & data","Improve team routines and data-informed problem solving","teaming data analysis"]
+ ],roles:"Behavioral Specialists · SEL · Assessment & Evaluation · Counseling · FSS/KSSN · school leadership"},
+ funding:{title:"Use funding correctly",lead:"Get to the current guidance, process, and documentation before making a funding decision.",tasks:[
+  ["Title I","Program guidance, activity logs, meetings, allowability, monitoring","Title I"],
+  ["31a","Program requirements, allowability, and funded supports","31a"],
+  ["Prior approval & monitoring","Find documentation and compliance resources","prior approval monitoring"],
+  ["Program design","Connect funding decisions to program purpose and evidence","funding program design evaluation"]
+ ],roles:"State & Federal Programs · program leads · Assessment & Evaluation · school leadership"},
+ data:{title:"Use data to make a decision",lead:"Move from a data point to a decision, action, and way to monitor impact.",tasks:[
+  ["Attendance data","Review patterns, subgroups, barriers, and response","attendance data"],
+  ["Assessment data","Find assessment and performance resources","assessment data"],
+  ["Program evaluation","Define evidence of implementation and impact","program evaluation"],
+  ["Dashboards & scorecards","Find current management and performance views","dashboard scorecard"]
+ ],roles:"Assessment & Evaluation · program leads · school teams · State & Federal Programs"},
+ program:{title:"Plan or improve a program",lead:"Bring together purpose, evidence, implementation, resources, and measures of success.",tasks:[
+  ["Extended learning","Plan and operate learning beyond the school day","extended learning after school"],
+  ["Summer school","Plan, implement, and evaluate summer learning","summer school"],
+  ["Family engagement","Design meaningful family partnership and engagement","family engagement"],
+  ["Implementation & evaluation","Clarify what will happen and how impact will be monitored","implementation evaluation"]
+ ],roles:"Extended Learning · Summer School · Family & Community Engagement · Assessment & Evaluation · State & Federal Programs"},
+ process:{title:"Find a process or tool",lead:"Go directly to the working resource rather than navigating the organizational chart.",tasks:[
+  ["Written processes","Find current CSA SOPs and operating processes","process SOP"],
+  ["Forms & templates","Find forms, templates, and required documentation","form template"],
+  ["Guidance","Find current program or implementation guidance","guidance"],
+  ["Training","Find professional learning and training resources","training"],
+  ["Reports & briefs","Find reports, evaluations, and decision briefs","report brief"]
+ ],roles:"Use search or browse by department when you know the program area."},
+ connect:{title:"Work with another CSA team",lead:"See where responsibilities overlap and make a useful connection without creating another silo.",tasks:[
+  ["Attendance","Connect family, school, health, counseling, and engagement supports","attendance"],
+  ["Mental health","Connect Counseling, Behavioral Health, Health, and family supports","mental health counseling behavioral health"],
+  ["Behavior / PBIS / SEL","Connect individual and systems-level supports","behavior PBIS SEL"],
+  ["Family needs","Connect FSS, KSSN, engagement, housing, and other supports","family support"],
+  ["Roles & responsibilities","Understand what CSA roles do and when to involve them","CSA roles"]
+ ],roles:"Use CSA Supports & Roles for role-level detail and Work Across CSA for shared work."}
+};
+function openWorkHub(key){
+ const d=CSA_WORK[key]; if(!d)return;
+ showView('workhub');
+ const tasks=d.tasks.map((x,i)=>`<button class="work-task" onclick="staffSearchTerm('${x[2].replace(/'/g,"\\'")}')"><span>${String(i+1).padStart(2,'0')}</span><div><strong>${x[0]}</strong><small>${x[1]}</small></div><b>→</b></button>`).join('');
+ document.getElementById('workResult').innerHTML=`
+   <p class="hub-kicker">CSA WORK HUB</p>
+   <h2>${d.title}</h2><p class="work-lead">${d.lead}</p>
+   <div class="work-layout"><div><h3>What do you need to do?</h3><div class="work-task-list">${tasks}</div></div>
+   <aside><h3>CSA connections</h3><p>${d.roles}</p><button onclick="showView('supportsroles')">Explore supports & roles →</button><button onclick="showView('crosscsa')">See cross-CSA work →</button></aside></div>`;
+ window.scrollTo({top:0,behavior:'smooth'});
+}
+</script>
+
+
+<script>
+function searchWorkDone(){
+  const q=(document.getElementById('workSearch')?.value||'').trim();
+  if(q) staffSearchTerm(q); else showView('library');
+}
+document.addEventListener('keydown',function(e){
+  if(e.key==='Enter' && e.target?.id==='workSearch') searchWorkDone();
+});
 </script>
 
 </body></html>
