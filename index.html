@@ -587,45 +587,118 @@ button,.gateway,.category-card,.dept-card,.tool-card,.resource-choice,.process-n
 }
 </style>
 
+
+<style>
+.three-home,.editorial-home,.studio-home,.csa-hub,.staff-home{display:none!important}
+body{background:#fbf7f0!important;color:#253746}
+header{background:#fffaf4!important;border-bottom:1px solid #eadfd2!important;box-shadow:none!important}
+header nav{display:none!important}
+
+.warm-home{max-width:1240px;margin:0 auto;padding:24px 24px 46px}
+.warm-hero{min-height:390px;display:grid;grid-template-columns:1.18fr .82fr;border-radius:24px;overflow:hidden;background:linear-gradient(120deg,#f8eadc 0%,#fff7ee 58%,#eef3e9 100%);box-shadow:0 14px 34px rgba(89,69,48,.08);position:relative}
+.warm-hero-copy{padding:52px 26px 48px 54px;position:relative;z-index:2}
+.warm-eyebrow{font-size:11px;font-weight:900;letter-spacing:.16em;color:#b65d39;margin:0 0 18px}
+.warm-hero h1{font-size:54px;line-height:1.02;letter-spacing:-.04em;color:#173f63;margin:0 0 14px}
+.warm-hero-copy>p:not(.warm-eyebrow){font-size:18px;color:#596b73;margin:0 0 30px}
+.warm-search{display:grid;grid-template-columns:44px 1fr 118px;align-items:center;max-width:700px;background:#fff;border-radius:15px;padding:7px;box-shadow:0 10px 25px rgba(86,67,47,.12)}
+.search-mark{font-size:28px;color:#253746;text-align:center;transform:rotate(-20deg)}
+.warm-search input{border:0;outline:0;background:transparent;padding:13px 8px;font-size:16px}
+.warm-search button{border:0;border-radius:11px;background:#d96732;color:#fff;font-weight:900;padding:14px 18px;cursor:pointer}
+.warm-hero-art{position:relative;overflow:hidden}
+.warm-shape{position:absolute;border-radius:50%}
+.shape-one{width:370px;height:370px;background:#dce9dc;right:-55px;top:-75px}
+.shape-two{width:250px;height:250px;background:#e7b27f;right:150px;bottom:-105px;opacity:.72}
+.warm-quote{position:absolute;right:56px;top:115px;display:grid;gap:5px;color:#173f63;font-size:25px;line-height:1.05;z-index:2}
+.warm-quote strong:nth-child(2){color:#8a6b48}.warm-quote strong:nth-child(3){color:#397665}
+
+.warm-paths{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:22px}
+.warm-path{min-height:355px;display:grid;grid-template-columns:1.12fr .88fr;border:0;border-radius:22px;overflow:hidden;text-align:left;cursor:pointer;padding:0;box-shadow:0 10px 25px rgba(89,69,48,.07);transition:.18s ease}
+.warm-path:hover{transform:translateY(-3px);box-shadow:0 15px 30px rgba(89,69,48,.11)}
+.explore-card{background:#fae8dc}.resources-card{background:#e3eee8}
+.path-text{padding:38px 28px 32px 36px;display:flex;flex-direction:column;align-items:flex-start}
+.accent-line{width:54px;height:5px;border-radius:5px;background:#d96732;margin-bottom:22px}.resources-card .accent-line{background:#397665}
+.path-text h2{font-size:35px;line-height:1.03;letter-spacing:-.03em;color:#173f63;margin:0 0 14px}
+.path-text p{font-size:15px;line-height:1.48;color:#4e5f68;margin:0;max-width:330px}
+.path-cta{margin-top:auto;display:inline-flex;align-items:center;gap:20px;border-radius:999px;background:#d96732;color:#fff;padding:12px 19px;font-size:14px;font-weight:900}
+.resources-card .path-cta{background:#397665}
+.path-photo{background-size:cover;background-position:center;min-height:355px}
+.explore-photo{background-image:linear-gradient(90deg,rgba(250,232,220,.15),transparent 30%),url('assets/explore-prototype.jpg')}
+.resources-photo{background-image:linear-gradient(90deg,rgba(227,238,232,.12),transparent 30%),url('assets/resources-prototype.jpg')}
+
+.warm-purpose{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin:24px 10px 0;border-top:1px solid #e3d9ce;padding-top:18px}
+.warm-purpose>div{display:flex;align-items:center;justify-content:center;gap:10px;font-size:13px;color:#40535f;border-right:1px solid #e3d9ce;padding:8px}.warm-purpose>div:last-child{border-right:0}
+.purpose-dot{width:9px;height:9px;border-radius:50%}.clay{background:#d96732}.sage{background:#688b72}.gold{background:#d8a73d}.teal{background:#3f8190}
+
+/* Warm second-level screens */
+.second-level{background:#fffaf4!important;border-radius:20px;margin-top:22px!important;padding:34px 38px 54px!important}
+.second-level h2{color:#173f63!important}.second-options>button:hover{background:#f8eee5!important}
+.second-search input{background:#fff!important}
+@media(max-width:900px){
+ .warm-hero{grid-template-columns:1fr}.warm-hero-art{display:none}.warm-paths{grid-template-columns:1fr}.warm-purpose{grid-template-columns:1fr 1fr}.warm-purpose>div:nth-child(2){border-right:0}
+}
+@media(max-width:620px){
+ .warm-home{padding:14px}.warm-hero-copy{padding:34px 24px}.warm-hero h1{font-size:40px}.warm-search{grid-template-columns:36px 1fr}.warm-search button{grid-column:1/-1}
+ .warm-path{grid-template-columns:1fr}.path-photo{min-height:190px;grid-row:1}.path-text{grid-row:2}.warm-purpose{grid-template-columns:1fr}.warm-purpose>div{border-right:0;border-bottom:1px solid #e3d9ce;justify-content:flex-start}
+}
+</style>
+
 </head>
 <body><a class="skip-link" href="#mainContent">Skip to main content</a>
 <header><div class="topbar"><div class="brand"><img class="brand-logo" src="https://grps-cdn.fxbrt.com/downloads/communications/grpsmychoicelogo.png" alt="Grand Rapids Public Schools — GRPS My Choice logo"><div class="brand-copy"><h1>Community &amp; Student Affairs (CSA)<br>Operating &amp; Resource Library</h1><small>One CSA · Clear processes · Stronger coordination · Better support</small></div></div><button class="mobile-nav-toggle" id="mobileNavToggle" aria-expanded="false" aria-controls="primaryNav" onclick="toggleMobileNav()">Menu</button><div class="nav" id="primaryNav" aria-label="Primary navigation"><button class="active" data-view="home">Home</button><button data-view="findsupport">Find Support</button><button data-view="library">Operating Library</button><button data-view="departments">Departments</button><button data-view="routing">How CSA Connects Support</button><button data-view="contributor">Builder</button><button class="quick-search-btn" onclick="openGlobalSearch()" aria-label="Search the CSA Operating and Resource Library">Search <span class="keyboard-hint">Ctrl/⌘ K</span></button></div></div></header>
 <main id="mainContent" tabindex="-1">
 <section id="home" class="view">
-<div class="three-home">
-  <div class="three-intro">
-    <p class="three-kicker">COMMUNITY &amp; STUDENT AFFAIRS</p>
-    <h1>Everything CSA. One place.</h1>
-    <p>Find the guidance, resources, people, and processes that help us do our work.</p>
-  </div>
+<div class="warm-home">
+  <section class="warm-hero">
+    <div class="warm-hero-copy">
+      <p class="warm-eyebrow">COMMUNITY &amp; STUDENT AFFAIRS</p>
+      <h1>What do you need<br>to work on today?</h1>
+      <p>Search CSA resources, processes, roles, tools, or guidance.</p>
 
-  <div class="three-search">
-    <label for="staffQuickSearch">Find something</label>
-    <div>
-      <input id="staffQuickSearch" type="search" placeholder="What are you looking for?">
-      <button onclick="staffSearch()" aria-label="Search">Search</button>
+      <div class="warm-search">
+        <span class="search-mark">⌕</span>
+        <input id="staffQuickSearch" type="search" placeholder="Search CSA…">
+        <button onclick="staffSearch()">Search</button>
+      </div>
     </div>
-  </div>
+    <div class="warm-hero-art">
+      <div class="warm-shape shape-one"></div>
+      <div class="warm-shape shape-two"></div>
+      <div class="warm-quote">
+        <strong>People.</strong>
+        <strong>Support.</strong>
+        <strong>Possibilities.</strong>
+      </div>
+    </div>
+  </section>
 
-  <div class="three-actions">
-    <button onclick="showView('explorecsa')">
-      <span class="three-num">01</span>
-      <span class="three-copy">
-        <strong>Explore CSA</strong>
-        <small>Understand our departments, supports, roles, and connections.</small>
-      </span>
-      <span class="three-arrow">→</span>
+  <section class="warm-paths">
+    <button class="warm-path explore-card" onclick="showView('explorecsa')">
+      <div class="path-text">
+        <span class="accent-line"></span>
+        <h2>Explore<br>our work</h2>
+        <p>See our departments, supports, roles, and how our work connects to support scholars, families, and schools.</p>
+        <span class="path-cta">Explore CSA <b>→</b></span>
+      </div>
+      <div class="path-photo explore-photo" aria-hidden="true"></div>
     </button>
 
-    <button onclick="showView('getworkdone')">
-      <span class="three-num">02</span>
-      <span class="three-copy">
-        <strong>Get Work Done</strong>
-        <small>Go to processes, tools, forms, guidance, and working resources.</small>
-      </span>
-      <span class="three-arrow">→</span>
+    <button class="warm-path resources-card" onclick="showView('getworkdone')">
+      <div class="path-text">
+        <span class="accent-line"></span>
+        <h2>Resources<br>for the work</h2>
+        <p>Find processes, tools, forms, guidance, training, and other resources to move your work forward.</p>
+        <span class="path-cta">Get to Resources <b>→</b></span>
+      </div>
+      <div class="path-photo resources-photo" aria-hidden="true"></div>
     </button>
-  </div>
+  </section>
+
+  <section class="warm-purpose">
+    <div><span class="purpose-dot clay"></span><strong>Support Scholars</strong></div>
+    <div><span class="purpose-dot sage"></span><strong>Partner with Families</strong></div>
+    <div><span class="purpose-dot gold"></span><strong>Strengthen Schools</strong></div>
+    <div><span class="purpose-dot teal"></span><strong>Connect the Work</strong></div>
+  </section>
 </div>
 </section>
 
