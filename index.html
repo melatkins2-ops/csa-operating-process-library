@@ -2521,7 +2521,7 @@ const departments=[
 let filter='ALL';let libraryTerm='';let libraryMode='landing';
 function escapeHtml(v){return String(v).replace(/[&<>\"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]))}
 function showView(id){if(id==='home' && document.body.classList.contains('legacy-mode')){returnToHub();return;}if(id==='tools')id='library';closeMobileNav();document.querySelectorAll('.view').forEach(v=>v.classList.add('hidden'));document.querySelectorAll('.nav button').forEach(b=>b.classList.remove('active'));document.getElementById('detail').classList.remove('active');document.getElementById(id).classList.remove('hidden'); if(id==='contributor')document.getElementById(id).classList.add('active');document.querySelector(`.nav button[data-view="${id}"]`)?.classList.add('active'); if(id==='library'){resetLibrary();renderCategoryGrid();renderVerifiedResourceGrid();populateLibraryFilters();} if(id==='routing')renderRoute();if(id==='departments'){resetDepartments();renderDepartments();} if(id==='contributor'){restoreBuilderDraft();populateProcessIdList();} if(id==='home')renderHomeShortcuts();window.scrollTo({top:0,behavior:'smooth'});setTimeout(()=>document.getElementById('mainContent')?.focus({preventScroll:true}),50)}
-document.querySelectorAll('.nav button').forEach(b=>b.onclick=()=>showView(b.dataset.view));
+document.querySelectorAll('.nav button[data-view]').forEach(b=>{b.onclick=()=>{const v=b.dataset.view;if(v==='sops'){window.location.href='sop.html';return;}showView(v);};});
 function gateway(g){showView('library');const c=categories.find(x=>x.gateway===g);if(c)openCategory(c.title);else showAllProcesses(g)}
 function setFilter(f,el){filter=f;document.querySelectorAll('#advancedFilters .chip').forEach(c=>c.classList.remove('active'));el.classList.add('active');renderProcesses()}
 
@@ -4425,5 +4425,36 @@ function returnToHub(){
   window.scrollTo({top:0,behavior:'smooth'});
 }
 function openSopCenter(){ window.location.href='sop.html'; }
+
+function enterLegacyView(view, options={}){
+  closeAllHubModals();
+  if(typeof closeGlobalSearch==='function') closeGlobalSearch();
+  document.body.classList.add('legacy-mode');
+  const hub=document.getElementById('csaHub2'); if(hub) hub.style.display='none';
+  if(typeof showView==='function') showView(view);
+  if(options.sopFind && view==='library'){
+    setTimeout(()=>{
+      // Keep the user in the resource library and bias the search toward SOP/process resources.
+      const candidates=['librarySearch','resourceSearch','processSearch','searchInput'];
+      const input=candidates.map(id=>document.getElementById(id)).find(Boolean) ||
+        [...document.querySelectorAll('#library input[type="search"],#library input[type="text"]')].find(el=>/search/i.test(el.placeholder||'')||/search/i.test(el.getAttribute('aria-label')||''));
+      if(input){input.value='SOP'; input.dispatchEvent(new Event('input',{bubbles:true}));}
+    },100);
+  }
+}
+function handleCsaRoute(){
+  const route=new URLSearchParams(window.location.search).get('route');
+  if(route==='sop-find') return enterLegacyView('library',{sopFind:true});
+  if(route==='sop-builder'){
+    enterLegacyView('contributor');
+    setTimeout(()=>{
+      const sopChoice=[...document.querySelectorAll('#contributor button,#contributor [role="button"]')].find(el=>/sop/i.test(el.textContent||''));
+      if(sopChoice) sopChoice.click();
+      document.querySelector('.process-builder-v2,#contributor')?.scrollIntoView({block:'start'});
+    },120);
+  }
+}
+document.addEventListener('DOMContentLoaded',handleCsaRoute);
+
 </script>
 </body></html>
