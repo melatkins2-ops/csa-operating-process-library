@@ -1220,6 +1220,52 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Ar
 }
 </style>
 
+
+<style id="workspace-redesign">
+/* Deliberately abandons hero/cards/marketing-page grammar */
+.workspace-home{max-width:1120px;margin:0 auto;padding:36px 28px 80px;color:#203f50}
+.workspace-intro{display:flex;justify-content:space-between;align-items:end;gap:40px;padding:8px 0 26px;border-bottom:2px solid #173f63}
+.workspace-eyebrow{font-size:9px;letter-spacing:.18em;font-weight:950;color:#c9682b;margin:0 0 7px}
+.workspace-intro h1{font-family:Georgia,"Times New Roman",serif;font-size:47px;line-height:1;color:#173f63;margin:0 0 8px;font-weight:700;letter-spacing:-.035em}
+.workspace-intro>div>p:last-child{font-size:14px;color:#617681;margin:0}
+.workspace-date{text-align:right}.workspace-date strong{display:block;font-size:13px;letter-spacing:.12em;color:#173f63}.workspace-date span{display:block;font-size:11px;color:#74858e;margin-top:4px}
+
+/* monthly editorial rail */
+.month-line{display:grid;grid-template-columns:150px repeat(3,1fr) auto;align-items:stretch;border-bottom:1px solid #d9e2e6;background:#fff}
+.month-label{padding:23px 18px 23px 0}.month-label span{display:block;font-size:9px;letter-spacing:.15em;font-weight:950;color:#c9682b}.month-label strong{display:block;font-family:Georgia,serif;font-size:26px;color:#173f63;margin-top:5px}
+.month-step{padding:22px 20px;border-left:1px solid #d9e2e6;position:relative}.month-step.current{background:#fbf3e8}.month-step.current:before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:#e87732}.month-step small{display:block;font-size:8px;letter-spacing:.12em;color:#9a735d;font-weight:900}.month-step b{display:block;font-size:13px;color:#173f63;margin:6px 0 3px}.month-step span{font-size:10px;color:#6c7d84;line-height:1.35}
+.month-line>button{border:0;background:#173f63;color:#fff;padding:0 17px;font-size:10px;font-weight:900;cursor:pointer}
+
+/* leadership pulse is list + editorial sidebar, no cards */
+.pulse{display:grid;grid-template-columns:280px 1fr;gap:52px;padding:48px 0;border-bottom:1px solid #d9e2e6}
+.pulse-title h2,.workspace-section-title h2,.update-feed h2,.workspace-find h2{font-family:Georgia,"Times New Roman",serif;color:#173f63;font-size:27px;line-height:1.05;margin:0}.pulse-title>p:last-child{font-size:11px;color:#75858c;line-height:1.5;max-width:190px}
+.pulse-list{border-top:1px solid #d9e2e6}.pulse-list button{width:100%;display:grid;grid-template-columns:115px 1fr 1.3fr auto;gap:16px;align-items:center;text-align:left;background:#fff;border:0;border-bottom:1px solid #d9e2e6;padding:16px 5px;cursor:pointer}.pulse-list button:hover{background:#fbf8f3}.pulse-list span{font-size:8px;letter-spacing:.1em;font-weight:950;color:#c9682b}.pulse-list strong{font-size:13px;color:#173f63}.pulse-list em{font-style:normal;font-size:10px;color:#708188}.pulse-list b{color:#e87732}
+
+/* cross-CSA work as connected workstream */
+.workstream{padding:46px 0;border-bottom:1px solid #d9e2e6}
+.workspace-section-title{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:23px}.workspace-section-title button{border:0;background:none;color:#173f63;font-size:10px;font-weight:900;cursor:pointer}
+.stream-line{display:grid;grid-template-columns:repeat(5,1fr);position:relative;padding-top:10px}.stream-line:before{content:"";position:absolute;left:7%;right:7%;top:20px;height:1px;background:#b9c8cf}.stream-line button{position:relative;border:0;background:transparent;text-align:center;padding:0 10px;cursor:pointer}.stream-line i{position:relative;z-index:2;display:block;width:17px;height:17px;border-radius:50%;background:#fff;border:4px solid #e87732;margin:2px auto 15px}.stream-line button:nth-child(even) i{border-color:#6f8973}.stream-line strong{display:block;font-size:12px;color:#173f63}.stream-line span{display:block;font-size:9px;color:#75858c;margin-top:4px}
+
+/* tools and updates as actual workspace utilities */
+.workspace-bottom{display:grid;grid-template-columns:1.15fr .85fr;gap:58px;padding:46px 0;border-bottom:1px solid #d9e2e6}
+.goto-links{border-top:1px solid #d9e2e6;display:grid;grid-template-columns:1fr 1fr;column-gap:28px}.goto-links a{display:flex;justify-content:space-between;align-items:center;text-decoration:none;border-bottom:1px solid #d9e2e6;padding:14px 3px;color:#173f63;font-size:11px}.goto-links a:hover{padding-left:8px;background:#fbf8f3}.goto-links span{color:#e87732;font-size:15px}
+.update-feed{background:#f4f7f8;padding:25px 27px}.update-feed .workspace-section-title{margin-bottom:12px}.feed-item{display:grid;grid-template-columns:62px 1fr;gap:12px;padding:14px 0;border-top:1px solid #d6e0e4}.feed-item>span{font-size:7px;letter-spacing:.1em;font-weight:950;padding-top:3px}.feed-new{color:#c9682b}.feed-decision{color:#6c5e77}.feed-due{color:#53745d}.feed-item p{margin:0}.feed-item b{display:block;font-size:11px;color:#173f63}.feed-item small{display:block;font-size:9px;line-height:1.4;color:#77878e;margin-top:3px}
+
+/* search demoted to bottom utility */
+.workspace-find{display:grid;grid-template-columns:1fr 1.25fr;gap:45px;align-items:center;padding:38px 0 0}.find-control{display:grid;grid-template-columns:1fr auto;border-bottom:2px solid #173f63}.find-control input{border:0;padding:12px 3px;font-size:11px;outline:0}.find-control button{border:0;background:none;color:#173f63;font-weight:950;font-size:10px;padding:0 4px}
+
+/* suppress the prior visual language on home */
+#hubhome .os-hero,#hubhome .month-panel,#hubhome .os-section,#hubhome .whats-new{display:none!important}
+
+@media(max-width:800px){
+ .workspace-intro{align-items:flex-start;flex-direction:column}.workspace-date{text-align:left}
+ .month-line{grid-template-columns:1fr}.month-step{border-left:0;border-top:1px solid #d9e2e6}.month-line>button{padding:15px}
+ .pulse{grid-template-columns:1fr;gap:20px}.pulse-list button{grid-template-columns:95px 1fr auto}.pulse-list em{grid-column:2/4}
+ .stream-line{grid-template-columns:1fr}.stream-line:before{display:none}.stream-line button{display:grid;grid-template-columns:25px 1fr;text-align:left;align-items:center;padding:10px 0}.stream-line i{margin:0}.stream-line span{grid-column:2}
+ .workspace-bottom,.workspace-find{grid-template-columns:1fr}.goto-links{grid-template-columns:1fr}
+}
+</style>
+
 </head>
 <body>
 
@@ -1239,56 +1285,73 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Ar
   </header>
 
   <section id="hubhome" class="hubview">
-    <div class="os-home">
-      <section class="os-hero">
-        <div>
-          <p class="os-kicker">CSA HUB</p>
-          <h1>One CSA.<br><em>Move the work forward.</em></h1>
-          <p class="os-lede">A working space for CSA leaders and teams to stay aligned, follow through, and get to what they need.</p>
-        </div>
-        <div class="os-searchbox">
-          <label>What are you working on?</label>
-          <div><input id="hubSearch" placeholder="Try Title I, attendance, summer school…" onkeydown="if(event.key==='Enter')hubSearch()"><button onclick="hubSearch()">Find</button></div>
-          <small>Search tools, processes, guidance, teams, and priority work.</small>
-        </div>
-      </section>
+<div class="workspace-home">
+  <div class="workspace-intro">
+    <div>
+      <p class="workspace-eyebrow">COMMUNITY &amp; STUDENT AFFAIRS</p>
+      <h1>CSA Workspace</h1>
+      <p>Leadership, priorities, follow-through, and the tools that move our work.</p>
+    </div>
+    <div class="workspace-date"><strong>OCTOBER</strong><span>Leadership &amp; Team Workspace</span></div>
+  </div>
 
-      <section class="month-panel">
-        <div class="month-side"><p class="os-kicker">THIS MONTH</p><h2>October</h2><p>Keep the work visible between CSA Leadership meetings.</p><button onclick="showHub('hubleadership')">Open monthly view →</button></div>
-        <div class="month-main">
-          <div class="month-item"><span>01</span><div><b>Leadership focus</b><p>Use the monthly leadership routine to move from discussion to ownership and follow-through.</p></div></div>
-          <div class="month-item"><span>02</span><div><b>Shared goal</b><p>Advance the CSA shared goal and capture evidence, feedback, and next steps.</p></div></div>
-          <div class="month-item"><span>03</span><div><b>Before the next meeting</b><p>Close commitments, surface barriers early, and bring decisions that require the Leadership Team.</p></div></div>
-        </div>
-      </section>
+  <section class="month-line">
+    <div class="month-label"><span>THIS MONTH</span><strong>October</strong></div>
+    <div class="month-step current"><small>01 · FOCUS</small><b>Leadership practice</b><span>Move from discussion to ownership.</span></div>
+    <div class="month-step"><small>02 · GOAL</small><b>Shared CSA goal</b><span>Advance the current milestone.</span></div>
+    <div class="month-step"><small>03 · WORK</small><b>Department follow-through</b><span>Surface barriers and dependencies.</span></div>
+    <button onclick="showHub('hubleadership')">Monthly view →</button>
+  </section>
 
-      <section class="os-section">
-        <div class="os-section-head"><div><p class="os-kicker">LEAD &amp; FOLLOW THROUGH</p><h2>What needs your attention?</h2></div><button onclick="showHub('hubleadership')">Leadership home →</button></div>
-        <div class="attention-grid">
-          <button onclick="showHub('hubleadership')"><span class="tone-orange">EXPECTATIONS</span><strong>How We Lead in CSA</strong><p>Shared expectations for ownership, communication, evidence, and follow-through.</p><b>View →</b></button>
-          <button onclick="showHub('hubleadership')"><span class="tone-green">MONTHLY UPDATE</span><strong>Prepare Your Update</strong><p>What moved, what needs attention, evidence, dependencies, and what comes next.</p><b>Open →</b></button>
-          <button onclick="showHub('hubleadership')"><span class="tone-plum">SHARED GOAL</span><strong>See Progress</strong><p>Current phase, milestones, evidence, feedback, and upcoming work.</p><b>Review →</b></button>
-        </div>
-      </section>
-
-      <section class="os-section">
-        <div class="os-section-head"><div><p class="os-kicker">CONTINUE THE WORK</p><h2>Working systems</h2></div><button onclick="showHub('hubresources')">See all tools →</button></div>
-        <div class="system-ribbon">
-          <a href="https://melatkins2-ops.github.io/grps-title-i-now/" target="_blank"><span>Title I</span><strong>Title I NOW</strong><b>↗</b></a>
-          <a href="https://melatkins2-ops.github.io/grps-mtss-field-manual-review/#home" target="_blank"><span>School Support</span><strong>MTSS Field Manual</strong><b>↗</b></a>
-          <a href="https://melatkins2-ops.github.io/grps-team-workspace/" target="_blank"><span>Teaming</span><strong>GRPS Team Studio</strong><b>↗</b></a>
-          <a href="https://melatkins2-ops.github.io/grps-written-processes/" target="_blank"><span>Operations</span><strong>Written Processes</strong><b>↗</b></a>
-        </div>
-      </section>
-
-      <section class="os-section whats-new">
-        <div><p class="os-kicker">WHAT'S NEW</p><h2>Changes worth knowing.</h2><p>This area is intentionally small. Use it only for new guidance, updated processes, launches, or action required.</p></div>
-        <button onclick="showHub('hubresources')">Browse current resources →</button>
-      </section>
+  <section class="pulse">
+    <div class="pulse-title"><p class="workspace-eyebrow">LEADERSHIP PULSE</p><h2>What needs attention?</h2><p>A working view between CSA Leadership meetings.</p></div>
+    <div class="pulse-list">
+      <button onclick="showHub('hubleadership')"><span>FOLLOW-THROUGH</span><strong>What did we commit to?</strong><em>Review decisions, owners, and due dates.</em><b>→</b></button>
+      <button onclick="showHub('hubleadership')"><span>MONTHLY UPDATE</span><strong>What moved?</strong><em>Capture evidence, barriers, dependencies, and next steps.</em><b>→</b></button>
+      <button onclick="showHub('hubleadership')"><span>SHARED GOAL</span><strong>Are we making progress?</strong><em>See milestones, evidence, feedback, and upcoming work.</em><b>→</b></button>
+      <button onclick="showHub('hubleadership')"><span>LEADERSHIP</span><strong>How are we leading?</strong><em>Return to CSA expectations and operating commitments.</em><b>→</b></button>
     </div>
   </section>
 
-  <section id="hubleadership" class="hubview" style="display:none">
+  <section class="workstream">
+    <div class="workspace-section-title"><div><p class="workspace-eyebrow">ACROSS CSA</p><h2>Active workstreams</h2></div><button onclick="showHub('hubwork')">See the work →</button></div>
+    <div class="stream-line">
+      <button onclick="showHub('hubwork')"><i></i><strong>Attendance</strong><span>Scholar Support</span></button>
+      <button onclick="showHub('hubwork')"><i></i><strong>MTSS</strong><span>School Support</span></button>
+      <button onclick="showHub('hubwork')"><i></i><strong>Title I</strong><span>Funding &amp; Compliance</span></button>
+      <button onclick="showHub('hubwork')"><i></i><strong>Family Engagement</strong><span>Family &amp; Community</span></button>
+      <button onclick="showHub('hubwork')"><i></i><strong>Extended Learning</strong><span>Programs &amp; Learning</span></button>
+    </div>
+  </section>
+
+  <div class="workspace-bottom">
+    <section class="goto">
+      <div class="workspace-section-title"><div><p class="workspace-eyebrow">GO TO</p><h2>Working tools</h2></div><button onclick="showHub('hubresources')">All tools →</button></div>
+      <div class="goto-links">
+        <a href="https://melatkins2-ops.github.io/grps-title-i-now/" target="_blank"><b>Title I NOW</b><span>↗</span></a>
+        <a href="https://melatkins2-ops.github.io/grps-mtss-field-manual-review/#home" target="_blank"><b>MTSS Field Manual</b><span>↗</span></a>
+        <a href="https://melatkins2-ops.github.io/grps-team-workspace/" target="_blank"><b>Team Studio</b><span>↗</span></a>
+        <a href="https://melatkins2-ops.github.io/grps-written-processes/" target="_blank"><b>Written Processes</b><span>↗</span></a>
+        <a href="https://melatkins2-ops.github.io/grps-fss-kssn-integration-test/" target="_blank"><b>FSS / KSSN</b><span>↗</span></a>
+        <a href="https://melatkins2-ops.github.io/extended-day-operations-hub/" target="_blank"><b>Extended Day</b><span>↗</span></a>
+      </div>
+    </section>
+
+    <section class="update-feed">
+      <div class="workspace-section-title"><div><p class="workspace-eyebrow">UPDATES</p><h2>Worth knowing</h2></div></div>
+      <div class="feed-item"><span class="feed-new">NEW</span><p><b>Use this space for meaningful changes.</b><small>New guidance, revised processes, launches, or action required.</small></p></div>
+      <div class="feed-item"><span class="feed-decision">DECISION</span><p><b>Leadership decisions stay visible.</b><small>Move important decisions out of meeting notes and into the work.</small></p></div>
+      <div class="feed-item"><span class="feed-due">DUE</span><p><b>Upcoming CSA actions.</b><small>Only deadlines that matter across the team.</small></p></div>
+    </section>
+  </div>
+
+  <section class="workspace-find">
+    <div><p class="workspace-eyebrow">FIND SOMETHING ELSE</p><h2>Search the CSA Hub</h2></div>
+    <div class="find-control"><input id="hubSearch" placeholder="Tool, process, guidance, team, or topic…" onkeydown="if(event.key==='Enter')hubSearch()"><button onclick="hubSearch()">Search</button></div>
+  </section>
+</div>
+</section>
+<section id="hubleadership" class="hubview" style="display:none">
     <div class="os-page">
       <button class="backlink" onclick="showHub('hubhome')">← Home</button>
       <p class="os-kicker">CSA LEADERSHIP</p><h1>Lead the work. Keep commitments visible.</h1>
