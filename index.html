@@ -1772,7 +1772,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Ar
 
     <section class="sop-home-band" aria-label="How we work">
       <div><p>HOW WE WORK</p><h2>Standard Operating Procedures</h2><span>Build, review, approve, find, and maintain the recurring work that needs to be consistent across CSA.</span></div>
-      <button onclick="showView('sops')">Open SOP Center →</button>
+      <button onclick="window.location.href='sop.html'">Open SOP Center →</button>
     </section>
 
     <section class="home-used">
@@ -3466,7 +3466,7 @@ function downloadCSV(name,rows){const csv=rows.map(r=>r.map(csvCell).join(',')).
 
 
 
-function applyHashRoute(){const h=decodeURIComponent(location.hash.slice(1));if(!h)return;if(h.startsWith('process=')){const id=h.split('=')[1];if(processes.some(p=>p.id===id))openProcess(id)}else if(h.startsWith('view=')){const id=h.split('=')[1];if(document.getElementById(id))showView(id)}else if(h.startsWith('tool=')){openTool(h.split('=')[1])}}
+function applyHashRoute(){const h=decodeURIComponent(location.hash.slice(1));if(!h)return;if(h==='sop-builder'){startSopBuilder();return;}if(h.startsWith('process=')){const id=h.split('=')[1];if(processes.some(p=>p.id===id))openProcess(id)}else if(h.startsWith('view=')){const id=h.split('=')[1];if(document.getElementById(id))showView(id)}else if(h.startsWith('tool=')){openTool(h.split('=')[1])}}
 function setRouteHash(kind,val){try{history.replaceState(null,'','#'+kind+'='+encodeURIComponent(val))}catch(e){}}
 const _openProcessFinal=openProcess;openProcess=function(id){_openProcessFinal(id);setRouteHash('process',id)}
 const _showViewFinal=showView;showView=function(id){_showViewFinal(id);if(id!=='detail')setRouteHash('view',id)}
@@ -4424,16 +4424,6 @@ function returnToHub(){
   if(typeof showHub==='function') showHub('hubhome');
   window.scrollTo({top:0,behavior:'smooth'});
 }
-function openSopCenter(){
-  // SOP navigation is isolated from the Leadership decision/update modals.
-  closeAllHubModals();
-  if(typeof closeGlobalSearch==='function') closeGlobalSearch();
-  document.body.classList.add('legacy-mode');
-  const hub=document.getElementById('csaHub2'); if(hub) hub.style.display='none';
-  document.querySelectorAll('body>section,body>main').forEach(x=>x.style.display='');
-  if(typeof showView==='function') showView('sops');
-  closeAllHubModals();
-  window.scrollTo({top:0,behavior:'auto'});
-}
+function openSopCenter(){ window.location.href='sop.html'; }
 </script>
 </body></html>
