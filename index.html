@@ -1008,8 +1008,108 @@ button,a{transition:background .12s ease,border-color .12s ease,transform .12s e
 }
 </style>
 
+
+<style>
+/* CSA HUB 2.0 — internal operating workspace */
+:root{--navy:#073f72;--ink:#17384b;--orange:#f47b20;--sky:#edf6fb;--warm:#fff7ed;--green:#e8f1e8;--line:#dce5ea;--muted:#607784;--white:#fff}
+body{background:#fff!important;color:var(--ink)!important}
+.brand-tagline,.site-tagline{display:none!important}
+header,.site-header{background:#fff!important;border-bottom:1px solid var(--line)!important;box-shadow:none!important}
+nav button[onclick*="builder"],nav a[href*="builder"],nav button[onclick*="search"],.top-nav button[onclick*="builder"],.top-nav button[onclick*="search"]{display:none!important}
+.hub-shell{max-width:1120px;margin:0 auto;padding:36px 28px 72px}
+.hub-kicker{font-size:10px;font-weight:950;letter-spacing:.16em;color:var(--orange);margin:0 0 8px}
+.hub-title{font-size:44px;line-height:1.02;letter-spacing:-.045em;color:var(--navy);margin:0 0 10px}
+.hub-intro{max-width:760px;font-size:16px;line-height:1.5;color:var(--muted);margin:0}
+.hub-breadcrumb{display:flex;gap:7px;align-items:center;font-size:12px;color:#71828c;margin-bottom:26px}.hub-breadcrumb button{border:0;background:none;color:var(--navy);font-weight:850;padding:0;cursor:pointer}
+
+/* HOME */
+.hub-hero{display:grid;grid-template-columns:1.35fr .65fr;gap:42px;align-items:end;padding:42px 0 34px;border-bottom:1px solid var(--line)}
+.hub-hero h1{font-size:58px;line-height:.98;letter-spacing:-.055em;color:var(--navy);margin:0 0 16px}
+.hub-hero p{font-size:17px;line-height:1.55;color:var(--muted);max-width:680px;margin:0}
+.hub-search label{display:block;font-size:12px;font-weight:900;color:var(--navy);margin-bottom:8px}
+.hub-search-row{display:grid;grid-template-columns:1fr auto;border:1px solid #cbd9e1;border-radius:12px;overflow:hidden;background:#fff}.hub-search-row input{border:0;padding:14px 15px;font-size:14px;outline:0}.hub-search-row button{border:0;background:var(--orange);color:#fff;padding:0 17px;font-weight:900;cursor:pointer}
+.hub-section{padding:34px 0;border-bottom:1px solid var(--line)}
+.hub-section-head{display:flex;justify-content:space-between;gap:20px;align-items:end;margin-bottom:17px}.hub-section-head h2{font-size:26px;color:var(--navy);margin:0}.hub-section-head p{font-size:13px;color:var(--muted);margin:4px 0 0}.hub-section-head button{border:0;background:none;color:var(--navy);font-weight:900;cursor:pointer}
+.now-list,.launch-list{border-top:1px solid var(--line)}
+.now-row,.launch-row{display:grid;grid-template-columns:170px 1fr auto;gap:22px;align-items:center;padding:17px 4px;border-bottom:1px solid var(--line)}
+.now-row span{font-size:10px;font-weight:950;letter-spacing:.08em;color:var(--orange)}.now-row strong,.launch-row strong{color:var(--ink);font-size:15px}.now-row small,.launch-row small{display:block;color:#71828c;margin-top:3px}.now-row button,.launch-row a{border:0;background:none;text-decoration:none;color:var(--navy);font-size:12px;font-weight:900;cursor:pointer}
+.launch-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 30px}.launch-row{grid-template-columns:1fr auto}
+.connect-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.connect-strip button{border:1px solid var(--line);background:#fff;text-align:left;padding:18px;border-radius:12px;cursor:pointer}.connect-strip button:hover{background:var(--sky)}.connect-strip strong{display:block;color:var(--navy);font-size:15px}.connect-strip small{display:block;color:var(--muted);line-height:1.4;margin-top:5px}
+
+/* WORK */
+.work-map{border-top:1px solid var(--line);margin-top:30px}.work-map button{width:100%;display:grid;grid-template-columns:220px 1fr auto;gap:24px;align-items:center;text-align:left;border:0;border-bottom:1px solid var(--line);background:#fff;padding:23px 4px;cursor:pointer}.work-map button:hover{background:#f8fbfd}.work-map strong{font-size:19px;color:var(--navy)}.work-map span{font-size:14px;line-height:1.45;color:var(--muted)}.work-map b{color:var(--orange);font-size:19px}
+.work-expanded{display:none;padding:22px 24px;background:var(--sky);border-bottom:1px solid var(--line)}.work-expanded.open{display:block}.work-expanded p{margin:0 0 12px;color:#536d7c;line-height:1.5}.work-tags{display:flex;flex-wrap:wrap;gap:7px}.work-tags span{background:#fff;border-radius:999px;padding:7px 10px;font-size:11px;font-weight:800;color:#31556c}
+
+/* TOOLS & RESOURCES */
+.resource-search{margin:26px 0 12px;display:grid;grid-template-columns:1fr auto;border:1px solid #cbd9e1;border-radius:12px;overflow:hidden}.resource-search input{border:0;padding:15px;font-size:14px;outline:0}.resource-search button{border:0;background:var(--orange);color:#fff;padding:0 20px;font-weight:900}
+.resource-types{display:flex;gap:7px;flex-wrap:wrap;margin:0 0 30px}.resource-types button{border:1px solid var(--line);background:#fff;border-radius:999px;padding:8px 11px;color:#31556c;font-size:11px;font-weight:850;cursor:pointer}
+.resource-directory{border-top:1px solid var(--line)}.resource-entry{display:grid;grid-template-columns:1fr auto;gap:20px;align-items:center;padding:17px 4px;border-bottom:1px solid var(--line);text-decoration:none}.resource-entry:hover{background:#f8fbfd;padding-left:10px}.resource-entry strong{display:block;color:var(--navy);font-size:16px}.resource-entry small{display:block;color:#71828c;margin-top:3px}.resource-entry b{font-size:11px;color:var(--orange)}
+
+/* TEAMS */
+.team-directory{border-top:1px solid var(--line);margin-top:30px}.team-directory button{width:100%;display:grid;grid-template-columns:1fr auto;align-items:center;border:0;border-bottom:1px solid var(--line);background:#fff;padding:18px 4px;text-align:left;cursor:pointer}.team-directory button:hover{background:#f8fbfd;padding-left:10px}.team-directory span{font-size:18px;font-weight:850;color:var(--ink)}.team-directory b{color:var(--orange)}
+@media(max-width:780px){.hub-hero{grid-template-columns:1fr}.hub-hero h1{font-size:45px}.launch-grid,.connect-strip{grid-template-columns:1fr}.now-row{grid-template-columns:1fr auto}.now-row span{grid-column:1/3}.work-map button{grid-template-columns:1fr auto}.work-map button span{grid-column:1/3}}
+</style>
+
+<style>body>#csaHub2~*:not(script):not(style){display:none!important}</style>
 </head>
-<body><a class="skip-link" href="#mainContent">Skip to main content</a>
+<body>
+<div id="csaHub2">
+<section id="hubhome" class="hubview">
+ <div class="hub-shell">
+  <div class="hub-hero">
+   <div><p class="hub-kicker">COMMUNITY &amp; STUDENT AFFAIRS</p><h1>CSA Hub</h1><p>The work, tools, and resources we use across Community &amp; Student Affairs—organized around what staff need to accomplish.</p></div>
+   <div class="hub-search"><label>What do you need today?</label><div class="hub-search-row"><input id="hubSearch" placeholder="Search a tool, process, topic, or support…" onkeydown="if(event.key==='Enter')hubSearch()"><button onclick="hubSearch()">Search</button></div></div>
+  </div>
+  <section class="hub-section"><div class="hub-section-head"><div><h2>Right Now</h2><p>A small space for work that needs attention across CSA.</p></div></div>
+   <div class="now-list">
+    <div class="now-row"><span>WORKING SYSTEM</span><div><strong>Written Processes</strong><small>Use and improve current CSA operating processes.</small></div><a href="https://melatkins2-ops.github.io/grps-written-processes/" target="_blank">Open ↗</a></div>
+    <div class="now-row"><span>TEAM PRACTICE</span><div><strong>GRPS Team Studio</strong><small>Keep recurring team work, data, and next steps visible.</small></div><a href="https://melatkins2-ops.github.io/grps-team-workspace/" target="_blank">Open ↗</a></div>
+   </div>
+  </section>
+  <section class="hub-section"><div class="hub-section-head"><div><h2>Get to the Work</h2><p>Launch the systems and tools used most often.</p></div><button onclick="showHub('hubresources')">All tools &amp; resources →</button></div>
+   <div class="launch-grid">
+    <div class="launch-row"><div><strong>Title I NOW</strong><small>Guidance, implementation and tools.</small></div><a href="https://melatkins2-ops.github.io/grps-title-i-now/" target="_blank">Open ↗</a></div>
+    <div class="launch-row"><div><strong>MTSS Field Manual</strong><small>Academic, attendance, behavior/PBIS and SEL supports.</small></div><a href="https://melatkins2-ops.github.io/grps-mtss-field-manual-review/#home" target="_blank">Open ↗</a></div>
+    <div class="launch-row"><div><strong>FSS / KSSN Integration</strong><small>Coordinated scholar and family support.</small></div><a href="https://melatkins2-ops.github.io/grps-fss-kssn-integration-test/" target="_blank">Open ↗</a></div>
+    <div class="launch-row"><div><strong>Extended Day Operations</strong><small>Program guidance and implementation.</small></div><a href="https://melatkins2-ops.github.io/extended-day-operations-hub/" target="_blank">Open ↗</a></div>
+   </div>
+  </section>
+  <section class="hub-section"><div class="hub-section-head"><div><h2>Across CSA</h2><p>See the work that crosses teams and functions.</p></div><button onclick="showHub('hubwork')">See all work →</button></div>
+   <div class="connect-strip"><button onclick="showHub('hubwork')"><strong>Scholar Support</strong><small>Attendance, behavioral health, counseling, health, SEL/PBIS.</small></button><button onclick="showHub('hubwork')"><strong>Family &amp; Community</strong><small>Engagement, FSS/KSSN, Parent University, community connections.</small></button><button onclick="showHub('hubwork')"><strong>Funding &amp; Improvement</strong><small>Title I, state programs, monitoring, data and continuous improvement.</small></button></div>
+  </section>
+ </div>
+</section>
+
+<section id="hubwork" class="hubview" style="display:none"><div class="hub-shell"><div class="hub-breadcrumb"><button onclick="showHub('hubhome')">CSA Hub</button><span>›</span><strong>Work</strong></div><p class="hub-kicker">WORK</p><h1 class="hub-title">How the work connects.</h1><p class="hub-intro">CSA work often crosses teams. Start with the work itself, then move to the tools, resources, and teams connected to it.</p><div class="work-map">
+<button onclick="toggleHubWork('hw1')"><strong>Scholar Support</strong><span>Attendance, behavioral health, counseling, school health, SEL and PBIS.</span><b>→</b></button><div id="hw1" class="work-expanded"><p>Supports individual scholars and the school systems around them.</p><div class="work-tags"><span>Attendance</span><span>Behavioral Health</span><span>Counseling</span><span>School Health</span><span>SEL / PBIS</span></div></div>
+<button onclick="toggleHubWork('hw2')"><strong>Family &amp; Community</strong><span>Family engagement, FSS/KSSN, Parent University and community connections.</span><b>→</b></button><div id="hw2" class="work-expanded"><p>Connects families, schools, and community supports.</p><div class="work-tags"><span>Family Engagement</span><span>FSS / KSSN</span><span>Parent University</span></div></div>
+<button onclick="toggleHubWork('hw3')"><strong>School Support</strong><span>MTSS, teaming, attendance systems, behavior/PBIS and implementation.</span><b>→</b></button><div id="hw3" class="work-expanded"><p>Strengthens school-level systems and implementation.</p><div class="work-tags"><span>MTSS</span><span>Team Studio</span><span>Attendance Systems</span><span>PBIS</span></div></div>
+<button onclick="toggleHubWork('hw4')"><strong>Programs &amp; Learning</strong><span>Extended learning, summer school, college/career and enrichment.</span><b>→</b></button><div id="hw4" class="work-expanded"><p>Extends learning and opportunity beyond the core day.</p><div class="work-tags"><span>Extended Learning</span><span>Summer School</span><span>College &amp; Career</span></div></div>
+<button onclick="toggleHubWork('hw5')"><strong>Funding &amp; Compliance</strong><span>Title I, 31a, state/federal programs, monitoring and allowability.</span><b>→</b></button><div id="hw5" class="work-expanded"><p>Supports compliant, strategic use of state and federal resources.</p><div class="work-tags"><span>Title I</span><span>31a</span><span>Monitoring</span><span>Allowability</span></div></div>
+<button onclick="toggleHubWork('hw6')"><strong>Data &amp; Improvement</strong><span>Assessment, evaluation, CNA, data analysis and continuous improvement.</span><b>→</b></button><div id="hw6" class="work-expanded"><p>Turns evidence into decisions, monitoring, and improvement.</p><div class="work-tags"><span>Assessment</span><span>Evaluation</span><span>CNA</span><span>Data Analysis</span></div></div>
+</div></div></section>
+
+<section id="hubresources" class="hubview" style="display:none"><div class="hub-shell"><div class="hub-breadcrumb"><button onclick="showHub('hubhome')">CSA Hub</button><span>›</span><strong>Tools &amp; Resources</strong></div><p class="hub-kicker">TOOLS &amp; RESOURCES</p><h1 class="hub-title">Find it. Open it. Use it.</h1><p class="hub-intro">The working tools, guidance, processes, training, reports, and hubs used across CSA.</p>
+<div class="resource-search"><input id="hubResourceSearch" placeholder="Search tools, processes, guidance, training, reports…" onkeydown="if(event.key==='Enter')hubResourceSearch()"><button onclick="hubResourceSearch()">Search</button></div>
+<div class="resource-types"><button onclick="filterHubResources('all')">All</button><button onclick="filterHubResources('tool')">Tools</button><button onclick="filterHubResources('process')">Processes</button><button onclick="filterHubResources('guidance')">Guidance</button><button onclick="filterHubResources('training')">Training</button><button onclick="filterHubResources('data')">Reports &amp; Data</button></div>
+<div class="resource-directory" id="hubResourceDirectory">
+<a class="resource-entry" data-type="guidance tool title federal" href="https://melatkins2-ops.github.io/grps-title-i-now/" target="_blank"><div><strong>Title I NOW</strong><small>Guidance · Tools · State &amp; Federal Programs</small></div><b>OPEN ↗</b></a>
+<a class="resource-entry" data-type="guidance tool mtss school" href="https://melatkins2-ops.github.io/grps-mtss-field-manual-review/#home" target="_blank"><div><strong>MTSS Field Manual</strong><small>Guidance · Tool · School Support</small></div><b>OPEN ↗</b></a>
+<a class="resource-entry" data-type="tool team data" href="https://melatkins2-ops.github.io/grps-team-workspace/" target="_blank"><div><strong>GRPS Team Studio</strong><small>Tool · Teaming &amp; Data Use</small></div><b>OPEN ↗</b></a>
+<a class="resource-entry" data-type="process operations" href="https://melatkins2-ops.github.io/grps-written-processes/" target="_blank"><div><strong>Written Processes</strong><small>Processes · Operations</small></div><b>OPEN ↗</b></a>
+<a class="resource-entry" data-type="guidance tool family" href="https://melatkins2-ops.github.io/grps-fss-kssn-integration-test/" target="_blank"><div><strong>FSS / KSSN Integration</strong><small>Guidance · Tool · Family &amp; Community</small></div><b>OPEN ↗</b></a>
+<a class="resource-entry" data-type="guidance attendance" href="https://melatkins2-ops.github.io/grps-strive-for-5-pilot/#resources" target="_blank"><div><strong>Strive for Less Than 5</strong><small>Guidance · Attendance</small></div><b>OPEN ↗</b></a>
+<a class="resource-entry" data-type="guidance family training" href="https://melatkins2-ops.github.io/parent-university/" target="_blank"><div><strong>Parent University</strong><small>Family Learning · Resources</small></div><b>OPEN ↗</b></a>
+<a class="resource-entry" data-type="guidance tool extended" href="https://melatkins2-ops.github.io/extended-day-operations-hub/" target="_blank"><div><strong>Extended Day Operations Hub</strong><small>Guidance · Tool · Extended Learning</small></div><b>OPEN ↗</b></a>
+<a class="resource-entry" data-type="tool css" href="https://melatkins2-ops.github.io/css-connect-pilot/" target="_blank"><div><strong>CSS Connect</strong><small>Tool · Community &amp; Student Services</small></div><b>OPEN ↗</b></a>
+<a class="resource-entry" data-type="data improvement" href="https://melatkins2-ops.github.io/grps-cna/" target="_blank"><div><strong>GRPS CNA</strong><small>Data · Continuous Improvement</small></div><b>OPEN ↗</b></a>
+</div></div></section>
+
+<section id="hubteams" class="hubview" style="display:none"><div class="hub-shell"><div class="hub-breadcrumb"><button onclick="showHub('hubhome')">CSA Hub</button><span>›</span><strong>Teams</strong></div><p class="hub-kicker">TEAMS</p><h1 class="hub-title">Go to your team's work.</h1><p class="hub-intro">Use Teams when you want to see what a CSA team owns and quickly reach the work it uses most.</p><div class="team-directory">
+<button onclick="legacyTeam('assessment')"><span>Assessment &amp; Evaluation</span><b>→</b></button><button onclick="legacyTeam('behavioral')"><span>Behavioral Health</span><b>→</b></button><button onclick="legacyTeam('counseling')"><span>Counseling</span><b>→</b></button><button onclick="legacyTeam('css')"><span>Community &amp; Student Services</span><b>→</b></button><button onclick="legacyTeam('extended')"><span>Extended Learning</span><b>→</b></button><button onclick="legacyTeam('sel')"><span>Social Emotional Learning</span><b>→</b></button><button onclick="legacyTeam('federal')"><span>State &amp; Federal Programs</span><b>→</b></button><button onclick="legacyTeam('summer')"><span>Summer School</span><b>→</b></button><button onclick="legacyTeam('face')"><span>Family &amp; Community Engagement</span><b>→</b></button><button onclick="legacyTeam('health')"><span>School Health Services</span><b>→</b></button>
+</div></div></section>
+</div>
+<a class="skip-link" href="#mainContent">Skip to main content</a>
 <header><div class="topbar"><div class="brand"><img class="brand-logo" src="https://grps-cdn.fxbrt.com/downloads/communications/grpsmychoicelogo.png" alt="Grand Rapids Public Schools — GRPS My Choice logo"><div class="brand-copy"><h1>Community &amp; Student Affairs (CSA)<br>Operating &amp; Resource Library</h1><small>One CSA · Clear processes · Stronger coordination · Better support</small></div></div><button class="mobile-nav-toggle" id="mobileNavToggle" aria-expanded="false" aria-controls="primaryNav" onclick="toggleMobileNav()">Menu</button><div class="nav" id="primaryNav" aria-label="Primary navigation"><button class="active" data-view="home">Home</button><button data-view="findsupport">Our Work</button><button data-view="library">Resources</button><button data-view="departments">Departments</button><button data-view="routing"></button><button data-view="contributor">Builder</button><button class="quick-search-btn" onclick="openGlobalSearch()" aria-label="Search the CSA Operating and Resource Library">Search <span class="keyboard-hint">Ctrl/⌘ K</span></button></div></div></header>
 <main id="mainContent" tabindex="-1">
 
@@ -3548,4 +3648,14 @@ document.addEventListener('DOMContentLoaded',()=>{
  document.querySelectorAll('header *').forEach(el=>{if(el.children.length===0 && el.textContent.trim()===phrase) el.style.display='none';});
 });
 </script>
+
+<script>
+function showHub(id){document.querySelectorAll('.hubview').forEach(v=>v.style.display='none');const el=document.getElementById(id);if(el){el.style.display='block';window.scrollTo({top:0,behavior:'smooth'})}}
+function toggleHubWork(id){document.querySelectorAll('.work-expanded').forEach(x=>{if(x.id!==id)x.classList.remove('open')});document.getElementById(id)?.classList.toggle('open')}
+function hubSearch(){const q=(document.getElementById('hubSearch')?.value||'').trim();if(!q)return;showHub('hubresources');setTimeout(()=>{const i=document.getElementById('hubResourceSearch');i.value=q;hubResourceSearch()},0)}
+function hubResourceSearch(){const q=(document.getElementById('hubResourceSearch')?.value||'').toLowerCase().trim();document.querySelectorAll('#hubResourceDirectory .resource-entry').forEach(x=>{x.style.display=(!q||x.innerText.toLowerCase().includes(q)||(x.dataset.type||'').includes(q))?'grid':'none'})}
+function filterHubResources(t){document.querySelectorAll('#hubResourceDirectory .resource-entry').forEach(x=>{x.style.display=(t==='all'||(x.dataset.type||'').includes(t))?'grid':'none'})}
+function legacyTeam(k){if(typeof showView==='function'&&typeof openDeptHub==='function'){document.getElementById('csaHub2').style.display='none';document.querySelectorAll('body>section,body>main').forEach(x=>x.style.display='');showView('departments');setTimeout(()=>openDeptHub(k),50)}}
+</script>
+
 </body></html>
