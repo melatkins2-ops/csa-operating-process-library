@@ -866,6 +866,54 @@ header button:empty,nav button:empty{display:none!important}
 @media(max-width:620px){.dept-intro h1{font-size:33px}.dept-panel-top{padding:25px 22px}.dept-panel-top h2{font-size:30px}}
 </style>
 
+<style>
+.dept-directory{width:min(1080px,calc(100% - 48px))!important;max-width:1080px!important;margin:0 auto!important;padding:30px 0 72px!important;box-sizing:border-box!important;overflow-wrap:break-word}
+.dept-directory *{box-sizing:border-box}.dept-intro,.dept-panel-top,.dept-resource-list,.dept-hub-panel{max-width:100%!important}.dept-intro{padding-right:20px}.dept-index button{padding-left:8px!important;padding-right:8px!important}.dept-index span{min-width:0;padding-right:18px}.dept-panel-top{width:100%;padding:30px 34px!important}.dept-resource-list a>div,.dept-resource-list>button>div{min-width:0;padding-right:16px}.dept-nav-controls{display:flex;gap:8px;margin:0 0 18px}.dept-nav-controls button{display:inline-flex;align-items:center;gap:7px;border:1px solid #d8ccc0;background:#fffaf4;color:#3b5158;border-radius:999px;padding:9px 13px;font-size:12px;font-weight:900;cursor:pointer}.dept-home-btn{color:#8d513b!important}@media(max-width:700px){.dept-directory{width:calc(100% - 28px)!important}.dept-intro{padding-right:0}.dept-intro h1{font-size:32px!important}.dept-panel-top{padding:24px 20px!important}.dept-panel-top h2{font-size:29px!important}.dept-resource-list a,.dept-resource-list>button{grid-template-columns:minmax(0,1fr) auto!important}}@media(max-width:430px){.dept-directory{width:calc(100% - 22px)!important}.dept-panel-top{padding:22px 17px!important}.dept-resource-list a,.dept-resource-list>button{grid-template-columns:1fr!important}.dept-resource-list b{justify-self:start}}
+</style>
+
+<style id="csa-modern-reskin">
+:root{--ink:#173f59;--navy:#063f73;--teal:#168b92;--coral:#e66f58;--orange:#f28a2b;--paper:#ffffff;--mist:#f4f7f8;--line:#dbe4e8;--muted:#637684}
+body{background:var(--paper)!important;color:var(--ink)!important}
+/* Global header: compact, crisp, no slogan clutter */
+.site-header,.topbar,header.site-header{background:#fff!important;border-bottom:1px solid var(--line)!important;box-shadow:none!important}
+.brand-sub,.brand-tagline,.tagline{display:none!important}
+.brand-title,.site-title{color:var(--navy)!important}
+/* Catch the known old tagline even when it has no semantic class */
+header *{text-shadow:none!important}
+nav button,nav a,.topnav button,.topnav a{background:transparent!important;border:0!important;border-radius:8px!important;color:var(--ink)!important}
+nav button:hover,nav a:hover,.topnav button:hover,.topnav a:hover{background:#eef6f7!important;color:var(--navy)!important}
+nav .active,nav button.active,.topnav .active{background:var(--navy)!important;color:#fff!important}
+/* Replace beige/earth surfaces with clean white/cool neutral */
+.new-home,.dept-directory,.explore-work,.resources-work{background:#fff!important}
+.home-editorial{background:linear-gradient(115deg,#f2f8f8 0%,#fff 62%)!important;border:1px solid var(--line)!important;border-radius:22px!important;min-height:285px!important;padding:44px 52px!important}
+.home-editorial:after{background:#d9eff0!important;width:240px!important;height:240px!important;right:-75px!important;bottom:-125px!important}
+.home-eyebrow{color:var(--teal)!important}
+.home-copy h1{color:var(--navy)!important;font-size:54px!important}
+.home-lede{color:var(--muted)!important}
+.home-mark span{color:#dceff1!important}.home-mark i{background:var(--coral)!important}
+.home-search-wrap{background:#fff!important;border:1px solid var(--line)!important;box-shadow:0 12px 30px rgba(20,63,89,.08)!important;border-radius:16px!important}
+.home-search input{border-color:#cddce1!important;border-radius:9px!important}.home-search input:focus{border-color:var(--teal)!important;box-shadow:0 0 0 3px rgba(22,139,146,.10)!important}
+.home-search button{background:var(--navy)!important;border-radius:9px!important}
+.search-prompts button{color:var(--teal)!important}
+/* Three choices: mostly white, color as punctuation rather than blocks */
+.home-paths{gap:0!important;border-top:1px solid var(--line)!important;border-bottom:1px solid var(--line)!important}
+.home-path{background:#fff!important;border-radius:0!important;box-shadow:none!important;min-height:165px!important;border-right:1px solid var(--line)!important;padding:25px 28px!important}
+.home-path:last-child{border-right:0!important}.home-path:hover{transform:none!important;background:#f7fafb!important;box-shadow:none!important}
+.home-path .path-number{color:var(--coral)!important}.home-path h2{color:var(--navy)!important}.home-path b{color:var(--teal)!important}
+.home-used{border-color:var(--line)!important}.home-used-head p{color:var(--coral)!important}.home-used-head h2{color:var(--navy)!important}.used-strip{border-color:var(--line)!important}.used-strip a{border-color:var(--line)!important}.used-strip a:hover{background:#f4f9f9!important}.used-strip b{color:var(--teal)!important}
+/* Departments: editorial directory, not card UI */
+.dept-intro>p,.dept-panel-top>p{color:var(--teal)!important}.dept-intro h1,.dept-panel-top h2{color:var(--navy)!important}.dept-index{border-color:var(--line)!important}.dept-index button{border-color:var(--line)!important}.dept-index button:hover{background:#f4f9f9!important}.dept-index b{color:var(--coral)!important}
+.dept-panel-top{background:#f3f8f9!important;border-radius:16px!important;border-left:5px solid var(--teal)!important}.dept-work-tags span{background:#edf6f6!important;color:#35656a!important}.dept-resource-list a,.dept-resource-list>button{border-color:var(--line)!important}.dept-resource-list b{color:var(--teal)!important}
+.dept-nav-controls button{background:#fff!important;border-color:var(--line)!important;color:var(--ink)!important}.dept-home-btn{color:var(--teal)!important}
+/* Broad cleanup of legacy warm blocks */
+.path-context button{color:var(--teal)!important}
+.catalog-toggle,.more-resource-options button{background:#fff!important;border-color:var(--line)!important;color:var(--ink)!important}
+.featured-list .featured-direct{background:#f3f8f9!important}.live-badge{background:var(--teal)!important}.pending-badge{background:#fff1ed!important;color:#a44f3e!important}
+/* Orange is now a small accent only */
+.home-used-head:after{content:"";display:block;width:38px;height:4px;background:var(--orange);border-radius:99px;margin-left:auto}
+@media(max-width:820px){.home-editorial{padding:34px 28px!important}.home-paths{border:0!important}.home-path{border:1px solid var(--line)!important;margin-bottom:8px!important;border-radius:12px!important}}
+</style>
+
 </head>
 <body><a class="skip-link" href="#mainContent">Skip to main content</a>
 <header><div class="topbar"><div class="brand"><img class="brand-logo" src="https://grps-cdn.fxbrt.com/downloads/communications/grpsmychoicelogo.png" alt="Grand Rapids Public Schools — GRPS My Choice logo"><div class="brand-copy"><h1>Community &amp; Student Affairs (CSA)<br>Operating &amp; Resource Library</h1><small>One CSA · Clear processes · Stronger coordination · Better support</small></div></div><button class="mobile-nav-toggle" id="mobileNavToggle" aria-expanded="false" aria-controls="primaryNav" onclick="toggleMobileNav()">Menu</button><div class="nav" id="primaryNav" aria-label="Primary navigation"><button class="active" data-view="home">Home</button><button data-view="findsupport">Our Work</button><button data-view="library">Resources</button><button data-view="departments">Departments</button><button data-view="routing"></button><button data-view="contributor">Builder</button><button class="quick-search-btn" onclick="openGlobalSearch()" aria-label="Search the CSA Operating and Resource Library">Search <span class="keyboard-hint">Ctrl/⌘ K</span></button></div></div></header>
@@ -1395,6 +1443,10 @@ header button:empty,nav button:empty{display:none!important}
 
 <section id="departments" class="view hidden">
   <div class="dept-directory">
+    <div class="dept-nav-controls">
+      <button class="dept-home-btn" onclick="showView('home')">⌂ <span>Home</span></button>
+      <button class="dept-back-btn" onclick="deptGoBack()">← <span>Back</span></button>
+    </div>
     <div class="path-context"><button onclick="showView('home')">CSA Home</button><span>›</span><strong>Departments</strong></div>
 
     <header class="dept-intro">
@@ -3388,4 +3440,18 @@ function closeDeptHub(){
 }
 </script>
 
+<script>
+function deptGoBack(){
+ const panel=document.getElementById('deptHubPanel');
+ if(panel && !panel.classList.contains('hidden')){closeDeptHub();}
+ else{showView('home');}
+ window.scrollTo({top:0,behavior:'smooth'});
+}
+</script>
+<script>
+document.addEventListener('DOMContentLoaded',()=>{
+ const phrase='One CSA · Clear processes · Stronger coordination · Better support';
+ document.querySelectorAll('header *').forEach(el=>{if(el.children.length===0 && el.textContent.trim()===phrase) el.style.display='none';});
+});
+</script>
 </body></html>
