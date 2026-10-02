@@ -4407,17 +4407,33 @@ document.addEventListener('DOMContentLoaded',()=>{renderMonthlyUpdate();renderCo
 
 <script>
 
+function closeAllHubModals(){
+  document.querySelectorAll('.hub-modal').forEach(m=>{
+    m.classList.remove('open');
+    m.setAttribute('aria-hidden','true');
+    m.style.display='';
+  });
+  document.documentElement.style.overflow='';
+  document.body.style.overflow='';
+}
 function returnToHub(){
+  closeAllHubModals();
+  if(typeof closeGlobalSearch==='function') closeGlobalSearch();
   document.body.classList.remove('legacy-mode');
   const hub=document.getElementById('csaHub2'); if(hub) hub.style.display='block';
   if(typeof showHub==='function') showHub('hubhome');
   window.scrollTo({top:0,behavior:'smooth'});
 }
 function openSopCenter(){
+  // SOP navigation is isolated from the Leadership decision/update modals.
+  closeAllHubModals();
+  if(typeof closeGlobalSearch==='function') closeGlobalSearch();
   document.body.classList.add('legacy-mode');
   const hub=document.getElementById('csaHub2'); if(hub) hub.style.display='none';
   document.querySelectorAll('body>section,body>main').forEach(x=>x.style.display='');
   if(typeof showView==='function') showView('sops');
+  closeAllHubModals();
+  window.scrollTo({top:0,behavior:'auto'});
 }
 </script>
 </body></html>
