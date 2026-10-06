@@ -1030,3 +1030,27 @@ window.sourceDrafts=[
     "callout": ""
   }
 ];
+
+// Display opened drafts as working documents rather than centered outlines.
+const draftDocumentStyle = document.createElement('style');
+draftDocumentStyle.textContent = `
+.dialog,.dialog-head,.dialog-body{text-align:left}
+.dialog{width:min(920px,calc(100% - 28px))}
+.dialog-head{padding:20px 30px 18px}
+.dialog-head .badge{margin-right:55px}
+.dialog-body{padding:26px 30px 34px}
+.dialog-body h3{font-size:18px;margin:24px 0 8px}
+.dialog-body h3:first-child{margin-top:0}
+.dialog-body p{margin:0;max-width:72ch;line-height:1.55}
+.dialog-body ol{list-style:none;counter-reset:draft-step;margin:10px 0 0;padding:0;display:grid;gap:8px}
+.dialog-body ol li{counter-increment:draft-step;display:grid;grid-template-columns:34px 1fr;gap:12px;align-items:start;border:1px solid var(--line);border-radius:10px;padding:13px 15px;color:#304c58;line-height:1.45}
+.dialog-body ol li:before{content:counter(draft-step);display:grid;place-items:center;width:30px;height:30px;border-radius:50%;background:var(--navy);color:#fff;font-size:13px;font-weight:900}
+.dialog-body h3:not(:has(+ ol))+p{border-left:3px solid #c9d4d8;padding-left:14px}
+.source-note{text-align:left;border-radius:0 10px 10px 0}
+.gaps{text-align:left}
+.callout{text-align:left;border-left:0;border-radius:11px;background:var(--navy);color:#fff}
+.callout button{display:inline-block;margin-top:8px;border-radius:8px;background:#fff;color:var(--navy);padding:10px 13px;text-decoration:none}
+.dialog-body ul{text-align:left}
+@media(max-width:600px){.dialog-head,.dialog-body{padding-left:18px;padding-right:18px}.dialog-body ol li{grid-template-columns:30px 1fr;padding:12px}.dialog-head h2{font-size:24px}}
+`;
+document.head.appendChild(draftDocumentStyle);
