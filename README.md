@@ -1,6 +1,8 @@
 # Community & Student Affairs (CSA) Standard Operating Procedures
 
-The approved way CSA does its recurring work. Staff can search procedures, review drafts, and start new guidance.
+A home for how CSA does its recurring work. Staff can search procedures, review drafts, and start new guidance.
+
+> **Status: placeholder.** The procedures here are being updated with the CSA teams. Until that work is finished, treat what's here as a working draft, not approved guidance.
 
 **Live site:** https://melatkins2-ops.github.io/csa-operating-process-library/
 
